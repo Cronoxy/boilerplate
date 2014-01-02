@@ -1,5 +1,5 @@
 body {
-    font-family: "Comic Sans MS", cursive, sans-serif !important;
+    
 }
 
 div {
@@ -111,6 +111,7 @@ div {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
     filter: alpha(opacity = 85);
     opacity: 0.85;
+    font-family: "Comic Sans MS", cursive, sans-serif !important;
 }
 
 .track3 {
