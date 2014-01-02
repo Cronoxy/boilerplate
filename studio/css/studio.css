@@ -161,8 +161,29 @@ div {
     font-size: 14px;
 }
 
+#scrollbox3 h3 {
+    font-size: 14px;
+}
+
+#scrollbox3 h3 a{
+    font-size: 14px;
+}
+
+#scrollbox3 h3 a:hover {
+    font-size: 14px;
+}
+
+#scrollbox3 h4 {
+    font-size:12px; 
+    color:#999;
+}
+
 #scrollbox3 p {
     padding: 10px;
     text-indent: 50px;
     text-align: justify;
+}
+
+#scrollbox3 p .more_details {
+    text-align: left;
 }
