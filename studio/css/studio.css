@@ -116,6 +116,22 @@ div {
     clear: left;
 }
 
+#head_scrollbar h1 {
+
+}
+
+#head_scrollbar h2 {
+    font-size: 14px;
+}
+
+#head_scrollbar h2 a{
+    font-size: 14px;
+}
+
+#head_scrollbar h2 a:hover {
+    font-size: 14px;
+}
+
 #scrollbox3 {
     overflow: auto;
     width: 715px;
@@ -158,22 +174,6 @@ div {
 .track3:hover .handle3,
 .track3.dragging .handle3 {
     width: 10px;
-}
-
-#scrollbox3 h1 {
-
-}
-
-#scrollbox3 h2 {
-    font-size: 14px;
-}
-
-#scrollbox3 h2 a{
-    font-size: 14px;
-}
-
-#scrollbox3 h2 a:hover {
-    font-size: 14px;
 }
 
 #scrollbox3 h3 {
