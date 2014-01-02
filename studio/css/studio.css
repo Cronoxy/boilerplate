@@ -55,6 +55,7 @@ div {
     -webkit-box-shadow: 0 2px 8px rgba(0,0,0,.3) inset;
     -moz-box-shadow: 0 2px 8px rgba(0,0,0,.3) inset;
     box-shadow: 0 2px 8px rgba(0,0,0,.3) inset;
+    font-family: "Comic Sans MS", cursive, sans-serif !important;
 }
 
 .main-footer .map {
@@ -146,4 +147,16 @@ div {
 
 #scrollbox3 h1 {
     
+}
+
+#scrollbox3 h2 {
+    font-size: 14px;
+}
+
+#scrollbox3 h2 a{
+    font-size: 14px;
+}
+
+#scrollbox3 h2 a:hover {
+    font-size: 14px;
 }
