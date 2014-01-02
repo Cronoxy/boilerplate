@@ -262,6 +262,9 @@
                 $('#main_menu').delegate('li.opener', 'click', function() {
                     $('#' + contentContainer).dialog('open');
                 });
+                $('.main-footer').delegate('li.opener', 'click', function() {
+                    $('#' + contentContainer).dialog('open');
+                });
 
                 tpl.loadTemplates(templates, function() {
                     buildTheElements();
