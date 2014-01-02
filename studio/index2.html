@@ -15,10 +15,51 @@
         <script src="js/underscore-min.js"></script>
         <script src="js/backbone-min.js"></script>
         <script src="js/templates.js"></script>
+        <script src="js/enscroll-0.5.1.min.js"></script>
 
         <link rel="stylesheet" type="text/css" href="css/jquery_ui/eggplant/jquery-ui-1.10.0.custom.css">
         <link rel="stylesheet" type="text/css" href="css/studio.css" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+        <style type="text/css">
+            #scrollbox3 {
+                overflow: auto;
+                width: 400px;
+                height: 360px;
+                padding: 0 5px;
+                border: 1px solid #b7b7b7;
+            }
+
+            .track3 {
+                width: 10px;
+                background: rgba(0, 0, 0, 0);
+                margin-right: 2px;
+                border-radius: 10px;
+                -webkit-transition: background 250ms linear;
+                transition: background 250ms linear;
+            }
+
+            .track3:hover,
+            .track3.dragging {
+                background: #d9d9d9; /* Browsers without rgba support */
+                background: rgba(0, 0, 0, 0.15);
+            }
+
+            .handle3 {
+                width: 7px;
+                right: 0;
+                background: #999;
+                background: rgba(0, 0, 0, 0.4);
+                border-radius: 7px;
+                -webkit-transition: width 250ms;
+                transition: width 250ms;
+            }
+
+            .track3:hover .handle3,
+            .track3.dragging .handle3 {
+                width: 10px;
+            }
+        </style>
     </head>
 
     <body style="background-color: #FFF; margin: 0;">
@@ -121,6 +162,13 @@
         </div>
 
         <div id="dialog_window_content"></div>
+
+        <div id="scrollbox3">
+            <h1>New Scrolling Window</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a justo erat, volutpat hendrerit dolor. Sed urna nibh, dapibus at egestas non, vulputate ut quam. Morbi a erat tristique tellus varius venenatis. Aenean lacinia sem eget turpis fringilla commodo. Sed lorem nisi, viverra a interdum nec, varius eu enim. Donec ornare, nunc quis eleifend iaculis, nulla eros mollis tellus, quis faucibus risus odio non lectus. Maecenas ac velit non metus rhoncus commodo. Nunc ligula est, ultricies sed mattis sed, dapibus at arcu. Maecenas lacinia nisl ut sem bibendum ac condimentum purus facilisis. Curabitur ut nibh lobortis libero interdum vehicula vel quis nulla.</p>
+
+            <p>Suspendisse et massa urna. Donec eu lorem nec felis dapibus aliquam viverra in quam. Suspendisse ultrices, nisi ac venenatis porttitor, erat turpis dapibus augue, sed rutrum nunc ante sed enim. Aliquam et tempus mi. Nullam malesuada, nunc a eleifend pretium, justo lorem tempus justo, id adipiscing dolor ipsum sed velit. Maecenas odio massa, feugiat vel sodales ut, placerat at quam. Cras viverra diam vitae diam elementum vitae aliquet erat tincidunt. Quisque fringilla neque in lacus tempor cursus. Curabitur eget nulla et nisi dignissim tempor vel non risus. Mauris ac ipsum metus, a auctor massa. Nunc eros ante, ullamcorper a mollis nec, aliquam sed est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        </div>
 
         <footer class="main-footer">
             <div class="map">
@@ -286,7 +334,7 @@
 
                 $('#' + contentContainer).dialog({
                     title: 'Content',
-                    autoOpen: true,
+                    autoOpen: false,
                     closeOnEscape: false,
                     close: function() {
                         var $this = $(this);
@@ -304,6 +352,12 @@
                     width: 800,
                     height: 640,
                     position: ['center', 80]
+                });
+
+                $('#scrollbox3').enscroll({
+                    showOnHover: true,
+                    verticalTrackClass: 'track3',
+                    verticalHandleClass: 'handle3'
                 });
 
                 var appRouter = new Router();
