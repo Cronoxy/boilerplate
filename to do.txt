@@ -1,17 +1,18 @@
 to do:
-- create all html pages
-- create pdfs for all documents (add also link - in SEO on page - to SEO document, last version)
 - ajax load html pages from the server
 - lazy load
+- create all html pages
+- create pdfs for all documents (add also link - in SEO on page - to SEO document, last version)
 - SEO onpage - there is an keywords analysis on the server
 - up to date portofolio
 - fix the first loading iframe - no scrollbars
-- test it
+- my tests
 - fix bugs
 - real close beta release (raluca)
-- fix bugs
+- fix bugs + feedback
 - close beta release (vali + georgiana, bogdan + cristina, catalin festila, petrus, catalin radu, cosmin + georgiana, cornel + roxana, petronela + florin, dragos barbieru)
 - clean up the leviatan.ro subdomains
-- fix bugs
+- fix bugs + feedback
+- go online
 - load articles from redmine
 - add en language
