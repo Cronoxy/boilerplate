@@ -121,11 +121,7 @@
 
         <div style="position: absolute; left: 50%; top: 50px; z-index: 99998;">
             <div style="position: relative; left: -50%;">
-                <div id="head_scrollbar">
-                    <h1>Page title</h1>
-                    <h2><a href="#home">Leviatan Web</a> >> <a href="#portofoliu-dezvoltare-web">Portofoliu</a> >> <a href="#portofoliu-dezvoltare-web">Dezvoltare web</a></h2>
-                    <hr>
-                </div>
+                <div id="head_scrollbar"></div>
                 <div id="scrollbox3"></div>
             </div>
         </div>
@@ -175,16 +171,25 @@
              * Define the app playground
              * ====================================
              */
+            var contentHeadContainer = 'head_scrollbar';
             var contentContainer = 'scrollbox3';
             var templates = [
                 'home',
+                'home-head',
                 'servicii-branding',
+                'servicii-branding-head',
                 'servicii-creatie-grafica',
+                'servicii-creatie-grafica-head',
                 'servicii-dezvoltare-web',
+                'servicii-dezvoltare-web-head',
                 'servicii-manipulare-foto',
+                'servicii-manipulare-foto-head',
                 'servicii-print',
+                'servicii-print-head',
                 'portofoliu-dezvoltare-web',
-                'portofoliu-concept-logo'
+                'portofoliu-dezvoltare-web-head',
+                'portofoliu-concept-logo',
+                'portofoliu-concept-logo-head'
             ];
 
             /**
@@ -215,13 +220,24 @@
             /**
              * Define the Views
              */
-            var Page = Backbone.View.extend({
+            var PageContent = Backbone.View.extend({
                 el: '#' + contentContainer,
                 render: function(templateType, templateName) {
-                    console.log('Render view: ' + templateName);
+                    console.log('Render view content: ' + templateName);
 
                     //var template = _.template($('#tpl-home-page').html());
                     var template = _.template(tpl.get(templateName));
+                    this.$el.html(template);
+                }
+            });
+            
+            var PageHeader = Backbone.View.extend({
+                el: '#' + contentHeadContainer,
+                render: function(templateType, templateName) {
+                    console.log('Render view header: ' + templateName);
+
+                    //var template = _.template($('#tpl-home-page').html());
+                    var template = _.template(tpl.get(templateName + '-head'));
                     this.$el.html(template);
                 }
             });
@@ -230,8 +246,11 @@
              * Define the Routes
              */
             var setRouteAction = function(templateType, templateName) {
-                var page = new Page();
-                page.render(templateType, templateName);
+                var pageContent = new PageContent();
+                pageContent.render(templateType, templateName);
+                
+                var pageHeader = new PageHeader();
+                pageHeader.render(templateType, templateName);
             };
 
             var Router = Backbone.Router.extend({
