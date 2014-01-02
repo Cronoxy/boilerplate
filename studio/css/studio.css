@@ -103,6 +103,19 @@ div {
     color: #808080;
 }
 
+#head_scrollbar {
+    width: 715px;
+    height: 150px;
+    padding: 0 5px;
+    background-color: white;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+    filter: alpha(opacity = 85);
+    opacity: 0.85;
+    font-family: "Comic Sans MS", cursive, sans-serif !important;
+    float: left;
+    clear: left;
+}
+
 #scrollbox3 {
     overflow: auto;
     width: 715px;
@@ -113,6 +126,8 @@ div {
     filter: alpha(opacity = 85);
     opacity: 0.85;
     font-family: "Comic Sans MS", cursive, sans-serif !important;
+    float: left;
+    clear: right;
 }
 
 .track3 {
