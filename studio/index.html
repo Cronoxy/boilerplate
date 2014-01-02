@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="" />
+        <meta name="description" content="" />
+
+        <title>jQuery.parallax</title>
+
+        <link rel="stylesheet" type="text/css" href="css/studio.css" />
+    </head>
+
+    <body>
+        <div class="wrap">
+            <div class="parallax-viewport" id="parallax">
+                <!-- parallax layers -->
+                <div class="parallax-layer" style="width:860px; height:273px;">
+                    <img src="images/0_sun.png" alt=""/>
+                    <img src="images/0_sun.png" alt="" style="position:absolute; left:300px; top:-12px;"/>
+                    <img src="images/0_sun.png" alt="" style="position:absolute; left:100px; top:-12px;"/>
+                </div>
+                <div class="parallax-layer" style="width:920px; height:274px;">
+                    <img src="images/1_mountains.png" alt="" />
+                </div>
+                <div class="parallax-layer" style="width:1100px; height:284px;">
+                    <img src="images/2_hill.png" alt="" style="position:absolute; top:40px; left:0;" />
+                </div>
+                <div class="parallax-layer" style="width:1360px; height:320px;">
+                    <img src="images/3_wood.png" alt="" style="position:absolute; top:96px; left:0;"/>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery.event.frame.js"></script>
+        <script src="js/jquery.parallax.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#parallax .parallax-layer')
+                        .parallax({
+                    mouseport: $('#parallax')
+                });
+            });
+        </script>
+    </body>
+</html>
