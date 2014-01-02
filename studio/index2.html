@@ -8,7 +8,6 @@
         <title>Leviatan Web - We do IT all</title>
 
         <script src="js/jquery.js"></script>
-        <script src="js/jquery-ui-1.9.2.js"></script>
         <script src="js/jquery.event.frame.js"></script>
         <script src="js/jquery.parallax.js"></script>
         <script src="js/bootstrap.js"></script>
@@ -17,7 +16,6 @@
         <script src="js/templates.js"></script>
         <script src="js/enscroll-0.5.1.min.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="css/jquery_ui/eggplant/jquery-ui-1.10.0.custom.css">
         <link rel="stylesheet" type="text/css" href="css/studio.css" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
@@ -164,8 +162,6 @@
             </div>
         </div>
 
-        <div id="dialog_window_content"></div>
-
         <div style="position: absolute; left: 50%; top: 50px; z-index: 99998;">
             <div id="scrollbox3" style="position: relative; left: -50%;">
                 <h1>New Scrolling Window</h1>
@@ -225,7 +221,6 @@
              * Define the app playground
              * ====================================
              */
-            var transferTo = 'open_home';
             var contentContainer = 'dialog_window_content';
             var templates = [
                 'home',
@@ -270,7 +265,6 @@
                 el: '#' + contentContainer,
                 render: function(templateType, templateName) {
                     console.log('Render view: ' + templateName);
-                    transferTo = 'open_' + templateType;
 
                     //var template = _.template($('#tpl-home-page').html());
                     var template = _.template(tpl.get(templateName));
@@ -325,13 +319,6 @@
              */
 
             $(document).ready(function() {
-                $('#main_menu').delegate('li.opener', 'click', function() {
-                    $('#' + contentContainer).dialog('open');
-                });
-                $('.main-footer').delegate('li.opener', 'click', function() {
-                    $('#' + contentContainer).dialog('open');
-                });
-
                 tpl.loadTemplates(templates, function() {
                     buildTheElements();
                 });
@@ -348,28 +335,6 @@
                     decay: 0.66, // 0-1 (0 instant, 1 forever) - Sets rate of decay curve for catching up with target mouse position
                     frameDuration: 30, // Int (milliseconds)
                     freezeClass: 'freeze' // String - Class added to layer when frozen
-                });
-
-                $('#' + contentContainer).dialog({
-                    title: 'Content',
-                    autoOpen: false,
-                    closeOnEscape: false,
-                    close: function() {
-                        var $this = $(this);
-                        $this.dialog("widget").effect("transfer", {
-                            to: "." + transferTo,
-                            className: "ui-effects-transfer"
-                        }, 500, function() {
-                            $this.dialog('close');
-                        });
-                        //history.pushState({}, 'title', '#close'); 
-                    },
-                    resizable: false,
-                    draggable: false,
-                    modal: false,
-                    width: 800,
-                    height: 640,
-                    position: ['center', 80]
                 });
 
                 $('#scrollbox3').enscroll({
