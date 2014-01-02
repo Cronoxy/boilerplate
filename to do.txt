@@ -1,5 +1,4 @@
 to do:
-- split the header and breadcrumbs from the content
 - create all html pages
 - create pdfs for all documents (add also link - in SEO on page - to SEO document, last version)
 - ajax load html pages from the server
