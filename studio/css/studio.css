@@ -1,5 +1,5 @@
 body {
-    
+
 }
 
 div {
@@ -146,7 +146,7 @@ div {
 }
 
 #scrollbox3 h1 {
-    
+
 }
 
 #scrollbox3 h2 {
@@ -159,4 +159,10 @@ div {
 
 #scrollbox3 h2 a:hover {
     font-size: 14px;
+}
+
+#scrollbox3 p {
+    padding: 10px;
+    text-indent: 50px;
+    text-align: justify;
 }
