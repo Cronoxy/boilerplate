@@ -5,42 +5,350 @@
         <meta name="author" content="" />
         <meta name="description" content="" />
 
-        <title>jQuery.parallax</title>
-
-        <link rel="stylesheet" type="text/css" href="css/studio.css" />
-    </head>
-
-    <body>
-        <div class="wrap">
-            <div class="parallax-viewport" id="parallax">
-                <!-- parallax layers -->
-                <div class="parallax-layer" style="width:860px; height:273px;">
-                    <img src="images/0_sun.png" alt=""/>
-                    <img src="images/0_sun.png" alt="" style="position:absolute; left:300px; top:-12px;"/>
-                    <img src="images/0_sun.png" alt="" style="position:absolute; left:100px; top:-12px;"/>
-                </div>
-                <div class="parallax-layer" style="width:920px; height:274px;">
-                    <img src="images/1_mountains.png" alt="" />
-                </div>
-                <div class="parallax-layer" style="width:1100px; height:284px;">
-                    <img src="images/2_hill.png" alt="" style="position:absolute; top:40px; left:0;" />
-                </div>
-                <div class="parallax-layer" style="width:1360px; height:320px;">
-                    <img src="images/3_wood.png" alt="" style="position:absolute; top:96px; left:0;"/>
-                </div>
-            </div>
-        </div>
+        <title>Leviatan Web - We do IT all</title>
 
         <script src="js/jquery.js"></script>
         <script src="js/jquery.event.frame.js"></script>
         <script src="js/jquery.parallax.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/underscore-min.js"></script>
+        <script src="js/backbone-min.js"></script>
+        <script src="js/templates.js"></script>
+        <script src="js/enscroll-0.5.1.min.js"></script>
+        <script src="js/jquery.lightbox-0.5.pack.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/studio.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+    </head>
+
+    <body style="background-color: #FFF; margin: 0;">
+        <iframe id="iframeAnimation" name="iframeAnimation" src="animation/index.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; min-height: 100%; border: none; display: block; z-index: 100000;"></iframe>
+        <div class="navbar navbar-fixed-top navbar-inverse">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <div class="nav-collapse collapse">
+                        <ul id="main_menu" class="nav">
+                            <li class="open_home opener">
+                                <a href="#home">Acasa</a>
+                            </li>
+                            <li class="dropdown open_portofoliu">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Portofoliu <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="opener"><a href="#portofoliu-dezvoltare-web">Dezvoltare web</a></li>
+                                    <li class="opener"><a href="#portofoliu-concept-logo">Concept logo</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown open_servicii">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Servicii <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="opener"><a href="#servicii-dezvoltare-web">Dezvoltare web</a></li>
+                                    <li class="opener"><a href="#servicii-print">Print</a></li>
+                                    <li class="opener"><a href="#servicii-branding">Branding</a></li>
+                                    <li class="opener"><a href="#servicii-creatie-grafica">Creatie grafica</a></li>
+                                    <li class="opener"><a href="#servicii-manipulare-foto">Manipulare foto</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="position: fixed; top: 35px; left: 30px; z-index: 10000;">
+            <img src="images/sigla_leviatan_WE_DO_IT_ALL.png" alt="" />
+        </div>
+
+        <div class="wrap">
+            <div class="parallax-viewport" id="parallax">
+                <!-- parallax layers -->
+                <div class="parallax-layer" style="width:714px; height:714px; opacity:0.2; filter:alpha(opacity=20);">
+                    <img src="images/imgs/bg.png" alt=""/>
+                </div>
+
+                <div class="parallax-layer" style="width:724px; height:724px; opacity:0.25; filter:alpha(opacity=25);">
+                    <img src="images/imgs/asterisk.png" alt="" style="position: absolute; left: 50px; top: 200px;"/>
+                    <img src="images/imgs/Raspberry_Pi_Logo.png" alt="" style="position: absolute; left: 550px; top: 200px;"/>
+                </div>
+
+                <div class="parallax-layer" style="width:734px; height:734px; opacity:0.3; filter:alpha(opacity=30);">
+                    <img src="images/imgs/TortoiseCVS_Logo.png" alt="" style="position: absolute; left: 50px; top: 50px;"/>
+                    <img src="images/imgs/Octocat.png" alt="" style="position: absolute; left: 500px; top: 50px;"/>
+                </div>
+
+                <div class="parallax-layer" style="width:744px; height:744px; opacity:0.35; filter:alpha(opacity=35);">
+                    <img src="images/imgs/php.png" alt="" style="position: absolute; left: 20px; top: 20px;"/>
+                    <img src="images/imgs/Python-logo.png" alt="" style="position: absolute; left: 450px; top: 20px;"/>
+                    <img src="images/imgs/nodejs.png" alt="" style="position: absolute; left: 240px; top: 120px;"/>
+                    <img src="images/imgs/rabbitmq.png" alt="" style="position: absolute; left: 170px; top: 400px;"/>
+                    <img src="images/imgs/nginx.png" alt="" style="position: absolute; left: 150px; top: 600px;"/>
+                    <img src="images/imgs/apache.png" alt="" style="position: absolute; left: 400px; top: 600px;"/>
+                </div>
+
+                <div class="parallax-layer" style="width:754px; height:754px; opacity:0.4; filter:alpha(opacity=40);">
+                    <img src="images/imgs/elasticsearch.png" alt="" style="position: absolute; left: 260px; top: 540px;"/>
+                    <img src="images/imgs/elephant.png" alt="" style="position: absolute; left: 20px; top: 370px;"/>
+                    <img src="images/imgs/zookeeper_logo.png" alt="" style="position: absolute; left: 570px; top: 470px;"/>
+                    <img src="images/imgs/couchbase_logo_final.png" alt="" style="position: absolute; left: 20px; top: 570px;"/>
+                    <img src="images/imgs/cassandra_logo.png" alt="" style="position: absolute; left: 570px; top: 370px;"/>
+                    <img src="images/imgs/Mysql.png" alt="" style="position: absolute; left: 570px; top: 460px;"/>
+                </div>
+
+                <div class="parallax-layer" style="width:764px; height:764px; opacity:0.45; filter:alpha(opacity=45);">
+                    <img src="images/imgs/Chrome_icon.png" alt="" style="position: absolute; left: 280px; top: 50px;"/>
+                    <img src="images/imgs/firefox-512-noshadow.png" alt="" style="position: absolute; left: 440px; top: 130px;"/>
+                    <img src="images/imgs/Internet_Explorer_7_Logo.png" alt="" style="position: absolute; left: 530px; top: 270px;"/>
+                    <img src="images/imgs/Opera_O.png" alt="" style="position: absolute; left: 110px; top: 470px;"/>
+                    <img src="images/imgs/safari.png" alt="" style="position: absolute; left: 440px; top: 470px;"/>
+                    <img src="images/imgs/Android_robot.png" alt="" style="position: absolute; left: 80px; top: 270px;"/>
+                    <img src="images/imgs/apple.png" alt="" style="position: absolute; left: 140px; top: 130px;"/>
+                </div>
+
+                <div class="parallax-layer" style="width:774px; height:774px; opacity:0.5; filter:alpha(opacity=50);">
+                    <img src="images/imgs/HTML5_Logo_512.png" alt="" style="position: absolute; left: 10px; top: 80px;"/>
+                    <img src="images/imgs/CSS3.png" alt="" style="position: absolute; left: 620px; top: 80px;"/>
+                    <img src="images/imgs/JavaScript-logo.png" alt="" style="position: absolute; left: 280px; top: 210px;"/>
+                    <img src="images/imgs/prototypejs_org_02.png" alt="" style="position: absolute; left: 170px; top: 300px;"/>
+                    <img src="images/imgs/Scriptaculous_logo.png" alt="" style="position: absolute; left: 170px; top: 380px;"/>
+                    <img src="images/imgs/jquery.png" alt="" style="position: absolute; left: 380px; top: 300px;"/>
+                    <img src="images/imgs/underscore.png" alt="" style="position: absolute; left: 270px; top: 360px;"/>
+                    <img src="images/imgs/backbone.png" alt="" style="position: absolute; left: 370px; top: 390px;"/>
+                </div>
+            </div>
+        </div>
+
+        <div style="position: absolute; left: 50%; top: 50px; z-index: 99998;">
+            <div style="position: relative; left: -50%;">
+                <div id="head_scrollbar"></div>
+                <div id="scrollbox3"></div>
+            </div>
+        </div>
+
+        <footer class="main-footer">
+            <div class="map">
+                <div style="display:inline-block; text-align: left;">
+                    <h4>Portofoliu</h4>
+                    <ul class="footer-list">
+                        <li class="opener"><a href="#portofoliu-dezvoltare-web">Dezvoltare web</a></li>
+                        <li class="opener"><a href="#portofoliu-concept-logo">Concept logo</a></li>
+                    </ul>
+                </div>
+
+                <div style="display:inline-block; text-align: left; margin-left: 50px;">
+                    <h4>Servicii</h4>
+                    <ul class="footer-list">
+                        <li class="opener"><a href="#servicii-dezvoltare-web">Dezvoltare web</a></li>
+                        <li class="opener"><a href="#servicii-print">Print</a></li>
+                        <li class="opener"><a href="#servicii-branding">Branding</a></li>
+                        <li class="opener"><a href="#servicii-creatie-grafica">Creatie grafica</a></li>
+                        <li class="opener"><a href="#servicii-manipulare-foto">Manipulare foto</a></li>
+                    </ul>
+                </div>
+
+                <div style="display:inline-block; text-align: left; margin-left: 50px;">
+                    <h4>Contact</h4>
+                    <ul class="footer-list">
+                        <li>E-mail:
+                            <br>
+                            <a href="mailto:marius.postolache@leviatan.ro?Subject=Message%20from%20leviatan%20web%20user" target="_top">marius.postolache@leviatan.ro</a>
+                            <br>
+                            <a href="mailto:raluca.postolache@leviatan.ro?Subject=Message%20from%20leviatan%20web%20user" target="_top">raluca.postolache@leviatan.ro</a>
+                        </li>
+                        <li>Telefon:
+                            <br>
+                            +40 / 766 516 827
+                            <br>
+                            +40 / 769 293 099
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
         <script>
+            /**
+             * ====================================
+             * Define the app playground
+             * ====================================
+             */
+            var contentHeadContainer = 'head_scrollbar';
+            var contentContainer = 'scrollbox3';
+            var templates = {};
+
+            /**
+             * Snippets
+             */
+            $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+//                options.url = 'http://10.2.2.3:8080' + options.url;
+                options.crossDomain = true;
+            });
+
+            $.fn.serializeObject = function() {
+                var o = {};
+                var a = this.serializeArray();
+                $.each(a, function() {
+                    if (typeof o[this.name] !== 'undefined') {
+                        try {
+                            o[this.name].push(this.value || '');
+                        } catch (err) {
+                            o[this.name] = [o[this.name]];
+                        }
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+                return o;
+            };
+
+            /**
+             * Define the Views
+             */
+            var PageContent = Backbone.View.extend({
+                el: '#' + contentContainer,
+                render: function(templateType, templateName) {
+                    var name = templateName;
+                    console.log('Render view content: ' + name);
+
+                    // if the content was allready loaded from the server
+                    if (typeof templates[name] !== 'undefined') {
+                        var template = _.template(templates[name]);
+                        this.$el.html(template);
+                        $(function() {
+                            $('a.logo_concept').lightBox();
+                        });
+                        return true;
+                    }
+
+                    // load the content from the server
+                    // and save it on local client
+                    var that = this;
+                    $.get('templates/' + name + '.html', function(data) {
+                        templates[name] = data;
+                        var template = _.template(data);
+                        that.$el.html(template);
+                        $(function() {
+                            $('a.logo_concept').lightBox();
+                        });
+                    });
+                }
+            });
+
+            var PageHeader = Backbone.View.extend({
+                el: '#' + contentHeadContainer,
+                render: function(templateType, templateName) {
+                    var name = templateName + '-head';
+                    console.log('Render view header: ' + name);
+
+                    // if the header content was allready loaded from the server
+                    if (typeof templates[name] !== 'undefined') {
+                        var template = _.template(templates[name]);
+                        this.$el.html(template);
+                        return true;
+                    }
+
+                    // load the header content from the server
+                    // and save it on local client
+                    var that = this;
+                    $.get('templates/' + name + '.html', function(data) {
+                        templates[name] = data;
+                        var template = _.template(data);
+                        that.$el.html(template);
+                    });
+                }
+            });
+
+            /**
+             * Define the Routes
+             */
+            var setRouteAction = function(templateType, templateName) {
+                var pageContent = new PageContent();
+                pageContent.render(templateType, templateName);
+
+                var pageHeader = new PageHeader();
+                pageHeader.render(templateType, templateName);
+            };
+
+            var Router = Backbone.Router.extend({
+                routes: {
+                    '': function() {
+                        setRouteAction('home', 'home');
+                    },
+                    'home': function() {
+                        setRouteAction('home', 'home');
+                    },
+                    'servicii-branding': function() {
+                        setRouteAction('servicii', 'servicii-branding');
+                    },
+                    'servicii-creatie-grafica': function() {
+                        setRouteAction('servicii', 'servicii-creatie-grafica');
+                    },
+                    'servicii-dezvoltare-web': function() {
+                        setRouteAction('servicii', 'servicii-dezvoltare-web');
+                    },
+                    'servicii-dezvoltare-web/:package': function(package) {
+                        setRouteAction('servicii', 'servicii-dezvoltare-web-' + package);
+                    },
+                            'servicii-manipulare-foto': function() {
+                        setRouteAction('servicii', 'servicii-manipulare-foto');
+                    },
+                    'servicii-print': function() {
+                        setRouteAction('servicii', 'servicii-print');
+                    },
+                    'portofoliu-dezvoltare-web': function() {
+                        setRouteAction('portofoliu', 'portofoliu-dezvoltare-web');
+                    },
+                    'portofoliu-dezvoltare-web/:project': function(project) {
+                        setRouteAction('portofoliu', 'portofoliu-dezvoltare-web-' + project);
+                    },
+                    'portofoliu-concept-logo': function() {
+                        setRouteAction('portofoliu', 'portofoliu-concept-logo');
+                    },
+                    'portofoliu-concept-logo/:project': function(project) {
+                        setRouteAction('portofoliu', 'portofoliu-concept-logo-' + project);
+                    }
+                }
+            });
+
+            /**
+             * ====================================
+             * Finished the app playground
+             * ====================================
+             */
+
             $(document).ready(function() {
+                buildTheElements();
+//                tpl.loadTemplates(templates, function() {
+//                    buildTheElements();
+//                });
+            });
+
+            var buildTheElements = function() {
                 $('#parallax .parallax-layer')
                         .parallax({
-                    mouseport: $('#parallax')
+                    mouseport: 'body',
+                    xparallax: true, // boolean | 0-1 | 'npx' | 'n%' - Sets axis of reaction and by how much they react
+                    yparallax: true, //
+                    xorigin: 0.5, // 0-1 - Sets default alignment. Only has effect when parallax values are something other than 1 (or true, or '100%')
+                    yorigin: 0.5, //
+                    decay: 0.66, // 0-1 (0 instant, 1 forever) - Sets rate of decay curve for catching up with target mouse position
+                    frameDuration: 30, // Int (milliseconds)
+                    freezeClass: 'freeze' // String - Class added to layer when frozen
                 });
-            });
+
+                $('#scrollbox3').enscroll({
+                    showOnHover: true,
+                    verticalTrackClass: 'track3',
+                    verticalHandleClass: 'handle3'
+                });
+
+                var appRouter = new Router();
+
+                Backbone.history.start();
+            }
         </script>
     </body>
 </html>

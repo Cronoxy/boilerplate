@@ -1,7 +1,4 @@
 to do:
-- ajax load html pages from the server
-- lazy load
-- create all html pages
 - create pdfs for all documents (add also link - in SEO on page - to SEO document, last version)
 - SEO onpage - there is an keywords analysis on the server
 - up to date portofolio

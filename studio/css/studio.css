@@ -3,14 +3,14 @@ body {
 }
 
 div {
-    -webkit-box-sizing: border-box;
+/*    -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-background-origin: padding-box;
     -moz-background-origin: padding;
     background-origin: padding-box;
-    display: block;
+    display: block;*/
 }
 
 .wrap {
@@ -201,4 +201,14 @@ div {
 
 .more_details {
     text-align: right !important;
+}
+
+.logo_concept img {
+    border: 1px solid #dadada;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 2px -1px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 1px 2px -1px rgba(0,0,0,0.25);
+    box-shadow: 0 1px 2px -1px rgba(0,0,0,0.25);
 }
