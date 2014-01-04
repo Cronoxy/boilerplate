@@ -1,12 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta charset="utf-8" />
-        <meta name="author" content="" />
-        <meta name="description" content="" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Language" content="ro" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Expires" content="Fri, 31 Jan 2014 20:00:00 GMT" />
+        <meta http-equiv="Cache-Control" content="public" />
+        <meta http-equiv="Last-Modified" content="Sat, 04 Jan 2014 20:00:00 GMT" />
 
         <title>Leviatan Web - We do IT all</title>
 
+        <meta name="description" content="page description" />
+        <meta name="keywords" content="keywords" />
+
+        <link href="images/favicon.ico" rel="shortcut icon" />
+
+        <script src="js/seo.js"></script>
         <script src="js/jquery.js"></script>
         <script src="js/jquery.event.frame.js"></script>
         <script src="js/jquery.parallax.js"></script>
@@ -154,15 +164,19 @@
                     <ul class="footer-list">
                         <li>E-mail:
                             <br>
-                            <a href="mailto:marius.postolache@leviatan.ro?Subject=Message%20from%20leviatan%20web%20user" target="_top">marius.postolache@leviatan.ro</a>
+                                <a href="mailto:marius.postolache@leviatan.ro?Subject=Message%20from%20leviatan%20web%20user" target="_top">marius.postolache@leviatan.ro</a>
+                            </br>
                             <br>
-                            <a href="mailto:raluca.postolache@leviatan.ro?Subject=Message%20from%20leviatan%20web%20user" target="_top">raluca.postolache@leviatan.ro</a>
+                                <a href="mailto:raluca.postolache@leviatan.ro?Subject=Message%20from%20leviatan%20web%20user" target="_top">raluca.postolache@leviatan.ro</a>
+                            </br>
                         </li>
                         <li>Telefon:
                             <br>
-                            +40 / 766 516 827
+                                +40 / 766 516 827
+                            </br>
                             <br>
-                            +40 / 769 293 099
+                                +40 / 769 293 099
+                            </br>
                         </li>
                     </ul>
                 </div>
@@ -178,12 +192,14 @@
             var contentHeadContainer = 'head_scrollbar';
             var contentContainer = 'scrollbox3';
             var templates = {};
+            var mainTitle = 'Leviatan Web - We do IT all';
+            var mainDescritpion = 'Leviatan Web, We do IT all.';
 
             /**
              * Snippets
              */
             $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-//                options.url = 'http://10.2.2.3:8080' + options.url;
+                //                options.url = 'http://10.2.2.3:8080' + options.url;
                 options.crossDomain = true;
             });
 
@@ -240,6 +256,11 @@
             var PageHeader = Backbone.View.extend({
                 el: '#' + contentHeadContainer,
                 render: function(templateType, templateName) {
+                    // SEO settings
+                    if (typeof seo.title[templateName] !== 'undefined') {
+                        document.title = seo.title[templateName];
+                    }
+                
                     var name = templateName + '-head';
                     console.log('Render view header: ' + name);
 
@@ -292,7 +313,7 @@
                     'servicii-dezvoltare-web/:package': function(package) {
                         setRouteAction('servicii', 'servicii-dezvoltare-web-' + package);
                     },
-                            'servicii-manipulare-foto': function() {
+                    'servicii-manipulare-foto': function() {
                         setRouteAction('servicii', 'servicii-manipulare-foto');
                     },
                     'servicii-print': function() {
@@ -320,13 +341,6 @@
              */
 
             $(document).ready(function() {
-                buildTheElements();
-//                tpl.loadTemplates(templates, function() {
-//                    buildTheElements();
-//                });
-            });
-
-            var buildTheElements = function() {
                 $('#parallax .parallax-layer')
                         .parallax({
                     mouseport: 'body',
@@ -348,7 +362,7 @@
                 var appRouter = new Router();
 
                 Backbone.history.start();
-            }
+            });
         </script>
     </body>
 </html>
