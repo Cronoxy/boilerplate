@@ -84,7 +84,7 @@ var seo = {
         'servicii-print': ' - Servicii - Print',
     },
     keywords: {
-        'home': '',
+        'home': 'leviatan, web, it',
         'portofoliu-concept-logo': 'concept, logo, portofoliu, leviatan, web',
         'portofoliu-concept-logo-3g-sport': 'concept, logo, portofoliu, leviatan, web, 3g sport',
         'portofoliu-concept-logo-alyana': 'concept, logo, portofoliu, leviatan, web, alyana',

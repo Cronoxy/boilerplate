@@ -266,6 +266,11 @@
                         $('meta[name=description]').remove();
                         $('head').append('<meta name="description" content="' + mainDescription + seo.description[templateName] + '">');
                     }
+                    // keywords
+                    if (typeof seo.keywords[templateName] !== 'undefined') {
+                        $('meta[name=keywords]').remove();
+                        $('head').append('<meta name="keywords" content="' + seo.keywords[templateName] + '">');
+                    }
                     
                     var name = templateName + '-head';
                     console.log('Render view header: ' + name);
