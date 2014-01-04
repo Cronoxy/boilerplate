@@ -108,9 +108,9 @@ div {
     height: 115px;
     padding: 0 5px;
     background-color: white;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
-    filter: alpha(opacity = 85);
-    opacity: 0.85;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=92)";
+    filter: alpha(opacity = 92);
+    opacity: 0.92;
     font-family: "Comic Sans MS", cursive, sans-serif !important;
 }
 
@@ -136,9 +136,9 @@ div {
     height: 525px;
     padding: 0 5px;
     background-color: white;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
-    filter: alpha(opacity = 85);
-    opacity: 0.85;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=92)";
+    filter: alpha(opacity = 92);
+    opacity: 0.92;
     font-family: "Comic Sans MS", cursive, sans-serif !important;
 }
 
