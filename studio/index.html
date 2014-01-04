@@ -193,7 +193,7 @@
             var contentContainer = 'scrollbox3';
             var templates = {};
             var mainTitle = 'Leviatan Web - We do IT all';
-            var mainDescritpion = 'Leviatan Web, We do IT all.';
+            var mainDescription = 'Leviatan Web, We do IT all.';
 
             /**
              * Snippets
@@ -258,7 +258,7 @@
                 render: function(templateType, templateName) {
                     // SEO settings
                     if (typeof seo.title[templateName] !== 'undefined') {
-                        document.title = seo.title[templateName];
+                        document.title = mainTitle + seo.title[templateName];
                     }
                 
                     var name = templateName + '-head';
