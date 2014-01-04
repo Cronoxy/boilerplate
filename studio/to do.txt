@@ -1,6 +1,8 @@
 to do:
-- SEO onpage - there is an keywords analysis on the server
 - up to date portofolio
+	else
+	muzicx
+	european-nexus-group
 - fix the first loading iframe - no scrollbars
 - my tests
 - fix bugs
