@@ -11,8 +11,8 @@
 
         <title>Leviatan Web - We do IT all</title>
 
-        <meta name="description" content="page description" />
-        <meta name="keywords" content="keywords" />
+        <meta name="description" content="Leviatan Web - We do IT all" />
+        <meta name="keywords" content="leviatan, web, it" />
 
         <link href="images/favicon.ico" rel="shortcut icon" />
 
@@ -193,7 +193,7 @@
             var contentContainer = 'scrollbox3';
             var templates = {};
             var mainTitle = 'Leviatan Web - We do IT all';
-            var mainDescription = 'Leviatan Web, We do IT all.';
+            var mainDescription = 'Leviatan Web - We do IT all';
 
             /**
              * Snippets
@@ -257,10 +257,16 @@
                 el: '#' + contentHeadContainer,
                 render: function(templateType, templateName) {
                     // SEO settings
+                    // title
                     if (typeof seo.title[templateName] !== 'undefined') {
                         document.title = mainTitle + seo.title[templateName];
                     }
-                
+                    // description
+                    if (typeof seo.description[templateName] !== 'undefined') {
+                        $('meta[name=description]').remove();
+                        $('head').append('<meta name="description" content="' + seo.description[templateName] + '">');
+                    }
+                    
                     var name = templateName + '-head';
                     console.log('Render view header: ' + name);
 
