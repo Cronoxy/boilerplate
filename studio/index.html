@@ -264,7 +264,7 @@
                     // description
                     if (typeof seo.description[templateName] !== 'undefined') {
                         $('meta[name=description]').remove();
-                        $('head').append('<meta name="description" content="' + seo.description[templateName] + '">');
+                        $('head').append('<meta name="description" content="' + mainDescription + seo.description[templateName] + '">');
                     }
                     
                     var name = templateName + '-head';
