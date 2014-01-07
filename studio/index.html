@@ -140,7 +140,7 @@
 
         <div class="main-footer"></div>
 
-        <script>
+        <script type="text/javascript">
             /**
              * ====================================
              * Define the app playground
@@ -223,7 +223,7 @@
                         $('meta[name=keywords]').remove();
                         $('head').append('<meta name="keywords" content="' + seo.keywords[templateName] + '">');
                     }
-                    
+
                     var name = templateName + '-head';
                     console.log('Render view header: ' + name);
 
@@ -325,9 +325,9 @@
                 var appRouter = new Router();
 
                 Backbone.history.start();
-                
-                $( '.main-footer' ).load( "views/footer.html", function() {
-                    console.log( "Load was performed." );
+
+                $('.main-footer').load("views/footer.html", function() {
+                    console.log("Load was performed.");
                 });
             });
         </script>
