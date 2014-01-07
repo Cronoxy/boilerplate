@@ -1,3 +1,9 @@
+var contentHeadContainer = 'head_scrollbar';
+var contentContainer = 'scrollbox3';
+var templates = {};
+var mainTitle = 'Leviatan Web - We do IT all';
+var mainDescription = 'Leviatan Web - We do IT all';
+
 var seo = {
     title: {
         'home': '',

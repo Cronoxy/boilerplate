@@ -34,6 +34,9 @@
 
     <body style="background-color: #FFF; margin: 0;">
         <iframe id="iframeAnimation" name="iframeAnimation" src="animation/index.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; min-height: 100%; border: none; display: block; z-index: 100000;"></iframe>
+
+
+
         <div class="navbar navbar-fixed-top navbar-inverse">
             <div class="navbar-inner">
                 <div class="container-fluid">
@@ -164,212 +167,205 @@
                     <ul class="footer-list">
                         <li>E-mail:
                             <br>
-                            <a href="mailto:marius.postolache@leviatan.ro?Subject=Message%20from%20leviatan%20web%20user" target="_top">marius.postolache@leviatan.ro</a>
-                            <br>
-                            <a href="mailto:raluca.postolache@leviatan.ro?Subject=Message%20from%20leviatan%20web%20user" target="_top">raluca.postolache@leviatan.ro</a>
-                        </li>
-                        <li>Telefon:
-                            <br>
-                            +40 / 766 516 827
-                            <br>
-                            +40 / 769 293 099
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
+                                <a href="mailto:marius.postolache@leviatan.ro?Subject=Message%20from%20leviatan%20web%20user" target="_top">marius.postolache@leviatan.ro</a>
+                                <br>
+                                    <a href="mailto:raluca.postolache@leviatan.ro?Subject=Message%20from%20leviatan%20web%20user" target="_top">raluca.postolache@leviatan.ro</a>
+                                    </li>
+                                    <li>Telefon:
+                                        <br>
+                                            +40 / 766 516 827
+                                            <br>
+                                                +40 / 769 293 099
+                                                </li>
+                                                </ul>
+                                                </div>
+                                                </div>
+                                                </footer>
 
-        <script>
-            /**
-             * ====================================
-             * Define the app playground
-             * ====================================
-             */
-            var contentHeadContainer = 'head_scrollbar';
-            var contentContainer = 'scrollbox3';
-            var templates = {};
-            var mainTitle = 'Leviatan Web - We do IT all';
-            var mainDescription = 'Leviatan Web - We do IT all';
+                                                <script>
+                                                    /**
+                                                     * Snippets
+                                                     */
+                                                    $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+                                                        //                options.url = 'http://10.2.2.3:8080' + options.url;
+                                                        options.crossDomain = true;
+                                                    });
 
-            /**
-             * Snippets
-             */
-            $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-                //                options.url = 'http://10.2.2.3:8080' + options.url;
-                options.crossDomain = true;
-            });
+                                                    $.fn.serializeObject = function() {
+                                                        var o = {};
+                                                        var a = this.serializeArray();
+                                                        $.each(a, function() {
+                                                            if (typeof o[this.name] !== 'undefined') {
+                                                                try {
+                                                                    o[this.name].push(this.value || '');
+                                                                } catch (err) {
+                                                                    o[this.name] = [o[this.name]];
+                                                                }
+                                                            } else {
+                                                                o[this.name] = this.value || '';
+                                                            }
+                                                        });
+                                                        return o;
+                                                    };
 
-            $.fn.serializeObject = function() {
-                var o = {};
-                var a = this.serializeArray();
-                $.each(a, function() {
-                    if (typeof o[this.name] !== 'undefined') {
-                        try {
-                            o[this.name].push(this.value || '');
-                        } catch (err) {
-                            o[this.name] = [o[this.name]];
-                        }
-                    } else {
-                        o[this.name] = this.value || '';
-                    }
-                });
-                return o;
-            };
+                                                    /**
+                                                     * Define the Views
+                                                     */
+                                                    var PageContent = Backbone.View.extend({
+                                                        el: '#' + contentContainer,
+                                                        render: function(templateType, templateName) {
+                                                            var name = templateName;
+                                                            console.log('Render view content: ' + name);
 
-            /**
-             * Define the Views
-             */
-            var PageContent = Backbone.View.extend({
-                el: '#' + contentContainer,
-                render: function(templateType, templateName) {
-                    var name = templateName;
-                    console.log('Render view content: ' + name);
+                                                            // if the content was allready loaded from the server
+                                                            if (typeof templates[name] !== 'undefined') {
+                                                                var template = _.template(templates[name]);
+                                                                this.$el.html(template);
+                                                                $(function() {
+                                                                    $('a.logo_concept').lightBox();
+                                                                });
+                                                                return true;
+                                                            }
 
-                    // if the content was allready loaded from the server
-                    if (typeof templates[name] !== 'undefined') {
-                        var template = _.template(templates[name]);
-                        this.$el.html(template);
-                        $(function() {
-                            $('a.logo_concept').lightBox();
-                        });
-                        return true;
-                    }
+                                                            // load the content from the server
+                                                            // and save it on local client
+                                                            var that = this;
+                                                            $.get('templates/' + name + '.html', function(data) {
+                                                                templates[name] = data;
+                                                                var template = _.template(data);
+                                                                that.$el.html(template);
+                                                                $(function() {
+                                                                    $('a.logo_concept').lightBox();
+                                                                });
+                                                            });
+                                                        }
+                                                    });
 
-                    // load the content from the server
-                    // and save it on local client
-                    var that = this;
-                    $.get('templates/' + name + '.html', function(data) {
-                        templates[name] = data;
-                        var template = _.template(data);
-                        that.$el.html(template);
-                        $(function() {
-                            $('a.logo_concept').lightBox();
-                        });
-                    });
-                }
-            });
+                                                    var PageHeader = Backbone.View.extend({
+                                                        el: '#' + contentHeadContainer,
+                                                        render: function(templateType, templateName) {
+                                                            // SEO settings
+                                                            // title
+                                                            if (typeof seo.title[templateName] !== 'undefined') {
+                                                                document.title = mainTitle + seo.title[templateName];
+                                                            }
+                                                            // description
+                                                            if (typeof seo.description[templateName] !== 'undefined') {
+                                                                $('meta[name=description]').remove();
+                                                                $('head').append('<meta name="description" content="' + mainDescription + seo.description[templateName] + '">');
+                                                            }
+                                                            // keywords
+                                                            if (typeof seo.keywords[templateName] !== 'undefined') {
+                                                                $('meta[name=keywords]').remove();
+                                                                $('head').append('<meta name="keywords" content="' + seo.keywords[templateName] + '">');
+                                                            }
 
-            var PageHeader = Backbone.View.extend({
-                el: '#' + contentHeadContainer,
-                render: function(templateType, templateName) {
-                    // SEO settings
-                    // title
-                    if (typeof seo.title[templateName] !== 'undefined') {
-                        document.title = mainTitle + seo.title[templateName];
-                    }
-                    // description
-                    if (typeof seo.description[templateName] !== 'undefined') {
-                        $('meta[name=description]').remove();
-                        $('head').append('<meta name="description" content="' + mainDescription + seo.description[templateName] + '">');
-                    }
-                    // keywords
-                    if (typeof seo.keywords[templateName] !== 'undefined') {
-                        $('meta[name=keywords]').remove();
-                        $('head').append('<meta name="keywords" content="' + seo.keywords[templateName] + '">');
-                    }
-                    
-                    var name = templateName + '-head';
-                    console.log('Render view header: ' + name);
+                                                            var name = templateName + '-head';
+                                                            console.log('Render view header: ' + name);
 
-                    // if the header content was allready loaded from the server
-                    if (typeof templates[name] !== 'undefined') {
-                        var template = _.template(templates[name]);
-                        this.$el.html(template);
-                        return true;
-                    }
+                                                            // if the header content was allready loaded from the server
+                                                            if (typeof templates[name] !== 'undefined') {
+                                                                var template = _.template(templates[name]);
+                                                                this.$el.html(template);
+                                                                return true;
+                                                            }
 
-                    // load the header content from the server
-                    // and save it on local client
-                    var that = this;
-                    $.get('templates/' + name + '.html', function(data) {
-                        templates[name] = data;
-                        var template = _.template(data);
-                        that.$el.html(template);
-                    });
-                }
-            });
+                                                            // load the header content from the server
+                                                            // and save it on local client
+                                                            var that = this;
+                                                            $.get('templates/' + name + '.html', function(data) {
+                                                                templates[name] = data;
+                                                                var template = _.template(data);
+                                                                that.$el.html(template);
+                                                            });
+                                                        }
+                                                    });
 
-            /**
-             * Define the Routes
-             */
-            var setRouteAction = function(templateType, templateName) {
-                var pageContent = new PageContent();
-                pageContent.render(templateType, templateName);
+                                                    /**
+                                                     * Define the Routes
+                                                     */
+                                                    var setRouteAction = function(templateType, templateName) {
+                                                        var pageContent = new PageContent();
+                                                        pageContent.render(templateType, templateName);
 
-                var pageHeader = new PageHeader();
-                pageHeader.render(templateType, templateName);
-            };
+                                                        var pageHeader = new PageHeader();
+                                                        pageHeader.render(templateType, templateName);
+                                                    };
 
-            var Router = Backbone.Router.extend({
-                routes: {
-                    '': function() {
-                        setRouteAction('home', 'home');
-                    },
-                    'home': function() {
-                        setRouteAction('home', 'home');
-                    },
-                    'servicii-branding': function() {
-                        setRouteAction('servicii', 'servicii-branding');
-                    },
-                    'servicii-creatie-grafica': function() {
-                        setRouteAction('servicii', 'servicii-creatie-grafica');
-                    },
-                    'servicii-dezvoltare-web': function() {
-                        setRouteAction('servicii', 'servicii-dezvoltare-web');
-                    },
-                    'servicii-dezvoltare-web/:package': function(package) {
-                        setRouteAction('servicii', 'servicii-dezvoltare-web-' + package);
-                    },
-                    'servicii-manipulare-foto': function() {
-                        setRouteAction('servicii', 'servicii-manipulare-foto');
-                    },
-                    'servicii-print': function() {
-                        setRouteAction('servicii', 'servicii-print');
-                    },
-                    'portofoliu-dezvoltare-web': function() {
-                        setRouteAction('portofoliu', 'portofoliu-dezvoltare-web');
-                    },
-                    'portofoliu-dezvoltare-web/:project': function(project) {
-                        setRouteAction('portofoliu', 'portofoliu-dezvoltare-web-' + project);
-                    },
-                    'portofoliu-concept-logo': function() {
-                        setRouteAction('portofoliu', 'portofoliu-concept-logo');
-                    },
-                    'portofoliu-concept-logo/:project': function(project) {
-                        setRouteAction('portofoliu', 'portofoliu-concept-logo-' + project);
-                    }
-                }
-            });
+                                                    var Router = Backbone.Router.extend({
+                                                        routes: {
+                                                            '': function() {
+                                                                setRouteAction('home', 'home');
+                                                            },
+                                                            'home': function() {
+                                                                setRouteAction('home', 'home');
+                                                            },
+                                                            'servicii-branding': function() {
+                                                                setRouteAction('servicii', 'servicii-branding');
+                                                            },
+                                                            'servicii-creatie-grafica': function() {
+                                                                setRouteAction('servicii', 'servicii-creatie-grafica');
+                                                            },
+                                                            'servicii-dezvoltare-web': function() {
+                                                                setRouteAction('servicii', 'servicii-dezvoltare-web');
+                                                            },
+                                                            'servicii-dezvoltare-web/:package': function(package) {
+                                                                setRouteAction('servicii', 'servicii-dezvoltare-web-' + package);
+                                                            },
+                                                            'servicii-manipulare-foto': function() {
+                                                                setRouteAction('servicii', 'servicii-manipulare-foto');
+                                                            },
+                                                            'servicii-print': function() {
+                                                                setRouteAction('servicii', 'servicii-print');
+                                                            },
+                                                            'portofoliu-dezvoltare-web': function() {
+                                                                setRouteAction('portofoliu', 'portofoliu-dezvoltare-web');
+                                                            },
+                                                            'portofoliu-dezvoltare-web/:project': function(project) {
+                                                                setRouteAction('portofoliu', 'portofoliu-dezvoltare-web-' + project);
+                                                            },
+                                                            'portofoliu-concept-logo': function() {
+                                                                setRouteAction('portofoliu', 'portofoliu-concept-logo');
+                                                            },
+                                                            'portofoliu-concept-logo/:project': function(project) {
+                                                                setRouteAction('portofoliu', 'portofoliu-concept-logo-' + project);
+                                                            }
+                                                        }
+                                                    });
 
-            /**
-             * ====================================
-             * Finished the app playground
-             * ====================================
-             */
+                                                    /**
+                                                     * ====================================
+                                                     * Finished the app playground
+                                                     * ====================================
+                                                     */
 
-            $(document).ready(function() {
-                $('#parallax .parallax-layer')
-                        .parallax({
-                    mouseport: 'body',
-                    xparallax: true, // boolean | 0-1 | 'npx' | 'n%' - Sets axis of reaction and by how much they react
-                    yparallax: true, //
-                    xorigin: 0.5, // 0-1 - Sets default alignment. Only has effect when parallax values are something other than 1 (or true, or '100%')
-                    yorigin: 0.5, //
-                    decay: 0.66, // 0-1 (0 instant, 1 forever) - Sets rate of decay curve for catching up with target mouse position
-                    frameDuration: 30, // Int (milliseconds)
-                    freezeClass: 'freeze' // String - Class added to layer when frozen
-                });
+                                                    $(document).ready(function() {
+                                                        $.getScript('app_vars.js', function() {
+                                                            $('#parallax .parallax-layer')
+                                                                    .parallax({
+                                                                mouseport: 'body',
+                                                                xparallax: true, // boolean | 0-1 | 'npx' | 'n%' - Sets axis of reaction and by how much they react
+                                                                yparallax: true, //
+                                                                xorigin: 0.5, // 0-1 - Sets default alignment. Only has effect when parallax values are something other than 1 (or true, or '100%')
+                                                                yorigin: 0.5, //
+                                                                decay: 0.66, // 0-1 (0 instant, 1 forever) - Sets rate of decay curve for catching up with target mouse position
+                                                                frameDuration: 30, // Int (milliseconds)
+                                                                freezeClass: 'freeze' // String - Class added to layer when frozen
+                                                            });
 
-                $('#scrollbox3').enscroll({
-                    showOnHover: true,
-                    verticalTrackClass: 'track3',
-                    verticalHandleClass: 'handle3'
-                });
+                                                            $('#scrollbox3').enscroll({
+                                                                showOnHover: true,
+                                                                verticalTrackClass: 'track3',
+                                                                verticalHandleClass: 'handle3'
+                                                            });
 
-                var appRouter = new Router();
+                                                            var appRouter = new Router();
 
-                Backbone.history.start();
-            });
-        </script>
-    </body>
-</html>
+                                                            Backbone.history.start();
+                                                        });
+
+
+                                                    });
+                                                </script>
+                                                </body>
+                                                </html>

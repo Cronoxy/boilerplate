@@ -1,13 +1,13 @@
 to do:
-- up to date portofolio
-	else
-	muzicx
-	european-nexus-group
 - fix the first loading iframe - no scrollbars
 - my tests
 - fix bugs
 - real close beta release (raluca)
 - fix bugs + feedback
+- up to date portofolio
+	else
+	muzicx
+	european-nexus-group
 - close beta release (vali + georgiana, bogdan + cristina, catalin festila, petrus, catalin radu, cosmin + georgiana, cornel + roxana, petronela + florin, dragos barbieru)
 - clean up the leviatan.ro subdomains
 - fix bugs + feedback
