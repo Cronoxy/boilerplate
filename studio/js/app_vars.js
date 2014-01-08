@@ -3,7 +3,6 @@ var contentContainer = 'scrollbox3';
 var templates = {};
 var mainTitle = 'Leviatan Web - We do IT all';
 var mainDescription = 'Leviatan Web - We do IT all';
-var showFooter = false;
 
 var seo = {
     title: {
