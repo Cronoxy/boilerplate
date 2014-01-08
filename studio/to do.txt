@@ -1,7 +1,4 @@
 to do:
-- fix the first loading iframe - no scrollbars
-- my tests
-- fix bugs
 - real close beta release (raluca)
 - fix bugs + feedback
 - up to date portofolio
