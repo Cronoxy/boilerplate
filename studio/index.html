@@ -210,8 +210,10 @@
                                                         return o;
                                                     };
 
-                                                    var showFooter = false;
                                                     function displayFooter() {
+                                                        $('#main_footer').show();
+                                                        return;
+
                                                         setTimeout(function() {
                                                             console.log(typeof showFooter);
                                                             console.log(showFooter);
@@ -219,7 +221,7 @@
                                                                 $('#main_footer').show();
                                                                 return;
                                                             }
-                                                            
+
                                                             displayFooter();
                                                         }, 1000);
                                                     }
@@ -377,8 +379,6 @@
                                                         var appRouter = new Router();
 
                                                         Backbone.history.start();
-
-                                                        displayFooter();
                                                     });
                                                 </script>
                                                 </body>

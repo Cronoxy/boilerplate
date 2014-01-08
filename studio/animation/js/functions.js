@@ -195,7 +195,7 @@ function start_animation() {
     setTimeout(function() {
         window.parent.document.getElementById('iframeAnimation').style.display = 'none';
                 
-        window.parent.showFooter = true;
+        window.parent.displayFooter();
         
     }, 7000);
 }
