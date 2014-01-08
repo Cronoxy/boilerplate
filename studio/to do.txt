@@ -1,13 +1,11 @@
 to do:
 - real close beta release (raluca)
 - fix bugs + feedback
+- go online
 - up to date portofolio
 	else
 	muzicx
 	european-nexus-group
-- close beta release (vali + georgiana, bogdan + cristina, catalin festila, petrus, catalin radu, cosmin + georgiana, cornel + roxana, petronela + florin, dragos barbieru)
 - clean up the leviatan.ro subdomains
-- fix bugs + feedback
-- go online
 - load articles from redmine
 - add en language
