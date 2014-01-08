@@ -82,10 +82,6 @@ function positioning_elements() {
 
     $('div_cover').style.width = WindowInnerWidth + ScrollX + "px";
 
-    //	map container
-    $('div_map_container').style.width = WindowInnerWidth + "px";
-    $('div_map_container').style.height = WindowInnerHeight + "px";
-
     var div_1_Width = getWidth("div_1", true, true);
     var div_1_Height = getHeight("div_1", true, true);
     var div_1_left = (WindowInnerWidth - div_1_Width) / 2 + ScrollX;
