@@ -193,9 +193,6 @@ function start_animation() {
     );
         
     setTimeout(function() {
-        window.parent.document.getElementById('iframeAnimation').style.display = 'none';
-                
-        window.parent.displayFooter();
-        
+        window.parent.document.getElementById('iframeAnimation').style.display = 'none';        
     }, 7000);
 }

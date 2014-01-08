@@ -211,13 +211,8 @@
                                                     };
 
                                                     function displayFooter() {
-                                                        $('#main_footer').show();
-                                                        return;
-
                                                         setTimeout(function() {
-                                                            console.log(typeof showFooter);
-                                                            console.log(showFooter);
-                                                            if (showFooter) {
+                                                            if ($('#iframeAnimation').css('display') === 'none') {
                                                                 $('#main_footer').show();
                                                                 return;
                                                             }
@@ -358,6 +353,8 @@
                                                      */
 
                                                     $(document).ready(function() {
+                                                        displayFooter();
+                                                        
                                                         $('#parallax .parallax-layer')
                                                                 .parallax({
                                                             mouseport: 'body',
