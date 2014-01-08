@@ -196,7 +196,7 @@ function start_animation() {
         var iframeAnimation = window.parent.document.getElementById('iframeAnimation');
         iframeAnimation.style.display = 'none';
         
-        window.parent.showFooter = true;
+        parent.showFooter = true;
         
     }, 7000);
 }
