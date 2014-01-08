@@ -33,7 +33,7 @@
 
     <body style="background-color: #FFF; margin: 0;">
         <iframe id="iframeAnimation" name="iframeAnimation" src="animation/index.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; min-height: 100%; border: none; display: block; z-index: 100000; overflow: hidden;"></iframe>
-        <div class="navbar navbar-fixed-top navbar-inverse">
+        <div class="navbar navbar-fixed-top navbar-inverse to-hide">
             <div class="navbar-inner">
                 <div class="container-fluid">
                     <div class="nav-collapse collapse">
@@ -68,11 +68,11 @@
             </div>
         </div>
 
-        <div style="position: fixed; top: 35px; left: 30px; z-index: 10000;">
+        <div class="to-hide" style="position: fixed; top: 35px; left: 30px; z-index: 10000;">
             <img src="images/sigla_leviatan_WE_DO_IT_ALL.png" alt="" />
         </div>
 
-        <div class="wrap">
+        <div class="wrap to-hide">
             <div class="parallax-viewport" id="parallax">
                 <!-- parallax layers -->
                 <div class="parallax-layer" style="width:714px; height:714px; opacity:0.2; filter:alpha(opacity=20);">
@@ -130,14 +130,14 @@
             </div>
         </div>
 
-        <div style="position: absolute; left: 50%; top: 50px; z-index: 99998;">
+        <div class="to-hide" style="position: absolute; left: 50%; top: 50px; z-index: 99998;">
             <div style="position: relative; left: -50%;">
                 <div id="head_scrollbar"></div>
                 <div id="scrollbox3"></div>
             </div>
         </div>
 
-        <div class="main-footer" id="main_footer" style="display: none;">
+        <div class="main-footer to-hide" id="main_footer">
             <div class="map">
                 <div style="display:inline-block; text-align: left;">
                     <h4>Portofoliu</h4>
@@ -353,8 +353,9 @@
                                                      */
 
                                                     $(document).ready(function() {
+                                                        $('div.to-hide').hide();
                                                         displayFooter();
-                                                        
+
                                                         $('#parallax .parallax-layer')
                                                                 .parallax({
                                                             mouseport: 'body',
