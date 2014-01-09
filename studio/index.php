@@ -39,5 +39,7 @@ $crawler = crawlerDetect($_SERVER['HTTP_USER_AGENT']);
 
 if (!$crawler) {
     echo file_get_contents('main.html');
+} else {
+    
 }
 ?>

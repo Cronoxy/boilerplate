@@ -16,7 +16,142 @@
 
         <link href="images/favicon.ico" rel="shortcut icon" />
 
-        <script src="js/app_vars.js"></script>
+        <script>
+            var contentHeadContainer = 'head_scrollbar';
+            var contentContainer = 'scrollbox3';
+            var templates = {};
+            var mainTitle = 'Leviatan Web - We do IT all';
+            var mainDescription = 'Leviatan Web - We do IT all';
+
+            var seo = {
+                title: {
+                    'home': '',
+                    'portofoliu-concept-logo': ' - Portofoliu - Concept logo',
+                    'portofoliu-concept-logo-3g-sport': ' - Portofoliu - Concept logo - 3G Sport',
+                    'portofoliu-concept-logo-alyana': ' - Portofoliu - Concept logo - Alyana',
+                    'portofoliu-concept-logo-asociatia-scoala-succesului': ' - Portofoliu - Concept logo - Asociatia Scoala Succesului',
+                    'portofoliu-concept-logo-atelier-image': ' - Portofoliu - Concept logo - Atelier Image',
+                    'portofoliu-concept-logo-focus-energetic': ' - Portofoliu - Concept logo - Focus energetic',
+                    'portofoliu-concept-logo-la-carnaval': ' - Portofoliu - Concept logo - Hai cu noi la carnaval',
+                    'portofoliu-concept-logo-lakroitoria': ' - Portofoliu - Concept logo - LaKroitoria',
+                    'portofoliu-concept-logo-unique-touch': ' - Portofoliu - Concept logo - Unique Touch',
+                    'portofoliu-dezvoltare-web': ' - Portofoliu - Dezvoltare web',
+                    'portofoliu-dezvoltare-web-3g-sport': ' - Portofoliu - Dezvoltare web - 3G Sport',
+                    'portofoliu-dezvoltare-web-alyana': ' - Portofoliu - Dezvoltare web - Alyana',
+                    'portofoliu-dezvoltare-web-amelia-ursache': ' - Portofoliu - Dezvoltare web - Amelia Ursache',
+                    'portofoliu-dezvoltare-web-asociatia-scoala-succesului': ' - Portofoliu - Dezvoltare web - Asociatia Scoala Succesului',
+                    'portofoliu-dezvoltare-web-atelier-image': ' - Portofoliu - Dezvoltare web - Atelier Image',
+                    'portofoliu-dezvoltare-web-carti-vizita': ' - Portofoliu - Dezvoltare web - Carti de vizita personalizate',
+                    'portofoliu-dezvoltare-web-edess': ' - Portofoliu - Dezvoltare web - EDeSS',
+                    'portofoliu-dezvoltare-web-focus-energetic': ' - Portofoliu - Dezvoltare web - Focus energetic',
+                    'portofoliu-dezvoltare-web-gesturetek': ' - Portofoliu - Dezvoltare web - Gesturetek',
+                    'portofoliu-dezvoltare-web-la-carnaval': ' - Portofoliu - Dezvoltare web - Hai cu noi la carnaval',
+                    'portofoliu-dezvoltare-web-lakroitoria': ' - Portofoliu - Dezvoltare web - LaKroitoria',
+                    'portofoliu-dezvoltare-web-nightbuyers': ' - Portofoliu - Dezvoltare web - Nightbuyers',
+                    'portofoliu-dezvoltare-web-olarit': ' - Portofoliu - Dezvoltare web - Olarit',
+                    'portofoliu-dezvoltare-web-powertek': ' - Portofoliu - Dezvoltare web - Powertek',
+                    'portofoliu-dezvoltare-web-tabara-de-vara': ' - Portofoliu - Dezvoltare web - Tabara de vara',
+                    'portofoliu-dezvoltare-web-traduceri': ' - Portofoliu - Dezvoltare web - Traduceri',
+                    'portofoliu-dezvoltare-web-travel-events': ' - Portofoliu - Dezvoltare web - Travel Events',
+                    'portofoliu-dezvoltare-web-ummagumma': ' - Portofoliu - Dezvoltare web - Ummagumma',
+                    'portofoliu-dezvoltare-web-unique-touch': ' - Portofoliu - Dezvoltare web - Unique touch',
+                    'servicii-branding': ' - Servicii - Branding',
+                    'servicii-creatie-grafica': ' - Servicii - Creatie grafica',
+                    'servicii-dezvoltare-web': ' - Servicii - Dezvoltare web',
+                    'servicii-dezvoltare-web-modalitate-lucru': ' - Servicii - Dezvoltare web - Modalitate de lucru',
+                    'servicii-dezvoltare-web-pachet-business': ' - Servicii - Dezvoltare web - Pachet Business',
+                    'servicii-dezvoltare-web-pachet-mediu': ' - Servicii - Dezvoltare web - Pachet Mediu',
+                    'servicii-dezvoltare-web-pachet-portal': ' - Servicii - Dezvoltare web - Pachet Portal',
+                    'servicii-dezvoltare-web-pachet-standard': ' - Servicii - Dezvoltare web - Pachet Standard',
+                    'servicii-manipulare-foto': ' - Servicii - Manipulare foto',
+                    'servicii-print': ' - Servicii - Print',
+                },
+                description: {
+                    'home': '',
+                    'portofoliu-concept-logo': ' - Portofoliu - Concept logo',
+                    'portofoliu-concept-logo-3g-sport': ' - Portofoliu - Concept logo - 3G Sport',
+                    'portofoliu-concept-logo-alyana': ' - Portofoliu - Concept logo - Alyana',
+                    'portofoliu-concept-logo-asociatia-scoala-succesului': ' - Portofoliu - Concept logo - Asociatia Scoala Succesului',
+                    'portofoliu-concept-logo-atelier-image': ' - Portofoliu - Concept logo - Atelier Image',
+                    'portofoliu-concept-logo-focus-energetic': ' - Portofoliu - Concept logo - Focus energetic',
+                    'portofoliu-concept-logo-la-carnaval': ' - Portofoliu - Concept logo - Hai cu noi la carnaval',
+                    'portofoliu-concept-logo-lakroitoria': ' - Portofoliu - Concept logo - LaKroitoria',
+                    'portofoliu-concept-logo-unique-touch': ' - Portofoliu - Concept logo - Unique Touch',
+                    'portofoliu-dezvoltare-web': ' - Portofoliu - Dezvoltare web',
+                    'portofoliu-dezvoltare-web-3g-sport': ' - Portofoliu - Dezvoltare web - 3G Sport',
+                    'portofoliu-dezvoltare-web-alyana': ' - Portofoliu - Dezvoltare web - Alyana',
+                    'portofoliu-dezvoltare-web-amelia-ursache': ' - Portofoliu - Dezvoltare web - Amelia Ursache',
+                    'portofoliu-dezvoltare-web-asociatia-scoala-succesului': ' - Portofoliu - Dezvoltare web - Asociatia Scoala Succesului',
+                    'portofoliu-dezvoltare-web-atelier-image': ' - Portofoliu - Dezvoltare web - Atelier Image',
+                    'portofoliu-dezvoltare-web-carti-vizita': ' - Portofoliu - Dezvoltare web - Carti de vizita personalizate',
+                    'portofoliu-dezvoltare-web-edess': ' - Portofoliu - Dezvoltare web - EDeSS',
+                    'portofoliu-dezvoltare-web-focus-energetic': ' - Portofoliu - Dezvoltare web - Focus energetic',
+                    'portofoliu-dezvoltare-web-gesturetek': ' - Portofoliu - Dezvoltare web - Gesturetek',
+                    'portofoliu-dezvoltare-web-la-carnaval': ' - Portofoliu - Dezvoltare web - Hai cu noi la carnaval',
+                    'portofoliu-dezvoltare-web-lakroitoria': ' - Portofoliu - Dezvoltare web - LaKroitoria',
+                    'portofoliu-dezvoltare-web-nightbuyers': ' - Portofoliu - Dezvoltare web - Nightbuyers',
+                    'portofoliu-dezvoltare-web-olarit': ' - Portofoliu - Dezvoltare web - Olarit',
+                    'portofoliu-dezvoltare-web-powertek': ' - Portofoliu - Dezvoltare web - Powertek',
+                    'portofoliu-dezvoltare-web-tabara-de-vara': ' - Portofoliu - Dezvoltare web - Tabara de vara',
+                    'portofoliu-dezvoltare-web-traduceri': ' - Portofoliu - Dezvoltare web - Traduceri',
+                    'portofoliu-dezvoltare-web-travel-events': ' - Portofoliu - Dezvoltare web - Travel Events',
+                    'portofoliu-dezvoltare-web-ummagumma': ' - Portofoliu - Dezvoltare web - Ummagumma',
+                    'portofoliu-dezvoltare-web-unique-touch': ' - Portofoliu - Dezvoltare web - Unique touch',
+                    'servicii-branding': ' - Servicii - Branding',
+                    'servicii-creatie-grafica': ' - Servicii - Creatie grafica',
+                    'servicii-dezvoltare-web': ' - Servicii - Dezvoltare web',
+                    'servicii-dezvoltare-web-modalitate-lucru': ' - Servicii - Dezvoltare web - Modalitate de lucru',
+                    'servicii-dezvoltare-web-pachet-business': ' - Servicii - Dezvoltare web - Pachet Business',
+                    'servicii-dezvoltare-web-pachet-mediu': ' - Servicii - Dezvoltare web - Pachet Mediu',
+                    'servicii-dezvoltare-web-pachet-portal': ' - Servicii - Dezvoltare web - Pachet Portal',
+                    'servicii-dezvoltare-web-pachet-standard': ' - Servicii - Dezvoltare web - Pachet Standard',
+                    'servicii-manipulare-foto': ' - Servicii - Manipulare foto',
+                    'servicii-print': ' - Servicii - Print',
+                },
+                keywords: {
+                    'home': 'leviatan, web, it',
+                    'portofoliu-concept-logo': 'concept, logo, portofoliu, leviatan, web',
+                    'portofoliu-concept-logo-3g-sport': 'concept, logo, portofoliu, leviatan, web, 3g sport',
+                    'portofoliu-concept-logo-alyana': 'concept, logo, portofoliu, leviatan, web, alyana',
+                    'portofoliu-concept-logo-asociatia-scoala-succesului': 'concept, logo, portofoliu, leviatan, web, asociatie, scoala, succes',
+                    'portofoliu-concept-logo-atelier-image': 'concept, logo, portofoliu, leviatan, web, atelier, image',
+                    'portofoliu-concept-logo-focus-energetic': 'concept, logo, portofoliu, leviatan, web, focus, energetic',
+                    'portofoliu-concept-logo-la-carnaval': 'concept, logo, portofoliu, leviatan, web, carnaval',
+                    'portofoliu-concept-logo-lakroitoria': 'concept, logo, portofoliu, leviatan, web, lakroitoria',
+                    'portofoliu-concept-logo-unique-touch': 'concept, logo, portofoliu, leviatan, web, unique, touch',
+                    'portofoliu-dezvoltare-web': 'dezvoltare, web, portofoliu, leviatan',
+                    'portofoliu-dezvoltare-web-3g-sport': 'dezvoltare, web, portofoliu, leviatan, 3g sport',
+                    'portofoliu-dezvoltare-web-alyana': 'dezvoltare, web, portofoliu, leviatan, alyana',
+                    'portofoliu-dezvoltare-web-amelia-ursache': 'dezvoltare, web, portofoliu, leviatan, Amelia Ursache',
+                    'portofoliu-dezvoltare-web-asociatia-scoala-succesului': 'dezvoltare, web, portofoliu, leviatan, asociatie, scoala, succes',
+                    'portofoliu-dezvoltare-web-atelier-image': 'dezvoltare, web, portofoliu, leviatan, atelier, image',
+                    'portofoliu-dezvoltare-web-carti-vizita': 'dezvoltare, web, portofoliu, leviatan, carti de vizita, personalizare',
+                    'portofoliu-dezvoltare-web-edess': 'dezvoltare, web, portofoliu, leviatan, edess',
+                    'portofoliu-dezvoltare-web-focus-energetic': 'dezvoltare, web, portofoliu, leviatan, focus, energetic',
+                    'portofoliu-dezvoltare-web-gesturetek': 'dezvoltare, web, portofoliu, leviatan, gesturetek',
+                    'portofoliu-dezvoltare-web-la-carnaval': 'dezvoltare, web, portofoliu, leviatan, carnaval',
+                    'portofoliu-dezvoltare-web-lakroitoria': 'dezvoltare, web, portofoliu, leviatan, lakroitoria',
+                    'portofoliu-dezvoltare-web-nightbuyers': 'dezvoltare, web, portofoliu, leviatan, nightbuyers',
+                    'portofoliu-dezvoltare-web-olarit': 'dezvoltare, web, portofoliu, leviatan, olarit',
+                    'portofoliu-dezvoltare-web-powertek': 'dezvoltare, web, portofoliu, leviatan, powertek',
+                    'portofoliu-dezvoltare-web-tabara-de-vara': 'dezvoltare, web, portofoliu, leviatan, tabara, vara',
+                    'portofoliu-dezvoltare-web-traduceri': 'dezvoltare, web, portofoliu, leviatan traduceri',
+                    'portofoliu-dezvoltare-web-travel-events': 'dezvoltare, web, portofoliu, leviatan travel, event',
+                    'portofoliu-dezvoltare-web-ummagumma': 'dezvoltare, web, portofoliu, leviatan, ummagumma',
+                    'portofoliu-dezvoltare-web-unique-touch': 'dezvoltare, web, portofoliu, leviatan, unique touch',
+                    'servicii-branding': 'servicii, branding, leviatan, web',
+                    'servicii-creatie-grafica': 'servicii, creatie, grafica, leviatan, web',
+                    'servicii-dezvoltare-web': 'servicii, dezvoltare, leviatan, web',
+                    'servicii-dezvoltare-web-modalitate-lucru': 'servicii, dezvoltare, leviatan, web, modalitate de lucru',
+                    'servicii-dezvoltare-web-pachet-business': 'servicii, dezvoltare, leviatan, web, pachet, business',
+                    'servicii-dezvoltare-web-pachet-mediu': 'servicii, dezvoltare, leviatan, web, pachet, mediu',
+                    'servicii-dezvoltare-web-pachet-portal': 'servicii, dezvoltare, leviatan, web, pachet, portal',
+                    'servicii-dezvoltare-web-pachet-standard': 'servicii, dezvoltare, leviatan, web, pachet, standard',
+                    'servicii-manipulare-foto': 'servicii, manipulare, foto, leviatan, web',
+                    'servicii-print': 'servicii, print, leviatan, web',
+                }
+            }
+        </script>
         <script src="js/jquery.js"></script>
         <script src="js/jquery.event.frame.js"></script>
         <script src="js/jquery.parallax.js"></script>
@@ -179,207 +314,207 @@
                                                 </div>
 
                                                 <script type="text/javascript">
-                                                    /**
-                                                     * ====================================
-                                                     * Define the app playground
-                                                     * ====================================
-                                                     */
+            /**
+             * ====================================
+             * Define the app playground
+             * ====================================
+             */
 
-                                                    /**
-                                                     * Snippets
-                                                     */
-                                                    $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-                                                        //                options.url = 'http://10.2.2.3:8080' + options.url;
-                                                        options.crossDomain = true;
-                                                    });
+            /**
+             * Snippets
+             */
+            $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+                //                options.url = 'http://10.2.2.3:8080' + options.url;
+                options.crossDomain = true;
+            });
 
-                                                    $.fn.serializeObject = function() {
-                                                        var o = {};
-                                                        var a = this.serializeArray();
-                                                        $.each(a, function() {
-                                                            if (typeof o[this.name] !== 'undefined') {
-                                                                try {
-                                                                    o[this.name].push(this.value || '');
-                                                                } catch (err) {
-                                                                    o[this.name] = [o[this.name]];
-                                                                }
-                                                            } else {
-                                                                o[this.name] = this.value || '';
-                                                            }
-                                                        });
-                                                        return o;
-                                                    };
+            $.fn.serializeObject = function() {
+                var o = {};
+                var a = this.serializeArray();
+                $.each(a, function() {
+                    if (typeof o[this.name] !== 'undefined') {
+                        try {
+                            o[this.name].push(this.value || '');
+                        } catch (err) {
+                            o[this.name] = [o[this.name]];
+                        }
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+                return o;
+            };
 
-                                                    function displayFooter() {
-                                                        setTimeout(function() {
-                                                            if ($('#iframeAnimation').css('display') === 'none') {
-                                                                $('div.to-hide').fadeIn();
-                                                                return;
-                                                            }
+            function displayFooter() {
+                setTimeout(function() {
+                    if ($('#iframeAnimation').css('display') === 'none') {
+                        $('div.to-hide').fadeIn();
+                        return;
+                    }
 
-                                                            displayFooter();
-                                                        }, 1000);
-                                                    }
+                    displayFooter();
+                }, 1000);
+            }
 
-                                                    /**
-                                                     * Define the Views
-                                                     */
-                                                    var PageContent = Backbone.View.extend({
-                                                        el: '#' + contentContainer,
-                                                        render: function(templateType, templateName) {
-                                                            var name = templateName;
-                                                            console.log('Render view content: ' + name);
+            /**
+             * Define the Views
+             */
+            var PageContent = Backbone.View.extend({
+                el: '#' + contentContainer,
+                render: function(templateType, templateName) {
+                    var name = templateName;
+                    console.log('Render view content: ' + name);
 
-                                                            // if the content was allready loaded from the server
-                                                            if (typeof templates[name] !== 'undefined') {
-                                                                var template = _.template(templates[name]);
-                                                                this.$el.html(template);
-                                                                $(function() {
-                                                                    $('a.logo_concept').lightBox();
-                                                                });
-                                                                return true;
-                                                            }
+                    // if the content was allready loaded from the server
+                    if (typeof templates[name] !== 'undefined') {
+                        var template = _.template(templates[name]);
+                        this.$el.html(template);
+                        $(function() {
+                            $('a.logo_concept').lightBox();
+                        });
+                        return true;
+                    }
 
-                                                            // load the content from the server
-                                                            // and save it on local client
-                                                            var that = this;
-                                                            $.get('templates/' + name + '.html', function(data) {
-                                                                templates[name] = data;
-                                                                var template = _.template(data);
-                                                                that.$el.html(template);
-                                                                $(function() {
-                                                                    $('a.logo_concept').lightBox();
-                                                                });
-                                                            });
-                                                        }
-                                                    });
+                    // load the content from the server
+                    // and save it on local client
+                    var that = this;
+                    $.get('templates/' + name + '.html', function(data) {
+                        templates[name] = data;
+                        var template = _.template(data);
+                        that.$el.html(template);
+                        $(function() {
+                            $('a.logo_concept').lightBox();
+                        });
+                    });
+                }
+            });
 
-                                                    var PageHeader = Backbone.View.extend({
-                                                        el: '#' + contentHeadContainer,
-                                                        render: function(templateType, templateName) {
-                                                            // SEO settings
-                                                            // title
-                                                            if (typeof seo.title[templateName] !== 'undefined') {
-                                                                document.title = mainTitle + seo.title[templateName];
-                                                            }
-                                                            // description
-                                                            if (typeof seo.description[templateName] !== 'undefined') {
-                                                                $('meta[name=description]').remove();
-                                                                $('head').append('<meta name="description" content="' + mainDescription + seo.description[templateName] + '">');
-                                                            }
-                                                            // keywords
-                                                            if (typeof seo.keywords[templateName] !== 'undefined') {
-                                                                $('meta[name=keywords]').remove();
-                                                                $('head').append('<meta name="keywords" content="' + seo.keywords[templateName] + '">');
-                                                            }
+            var PageHeader = Backbone.View.extend({
+                el: '#' + contentHeadContainer,
+                render: function(templateType, templateName) {
+                    // SEO settings
+                    // title
+                    if (typeof seo.title[templateName] !== 'undefined') {
+                        document.title = mainTitle + seo.title[templateName];
+                    }
+                    // description
+                    if (typeof seo.description[templateName] !== 'undefined') {
+                        $('meta[name=description]').remove();
+                        $('head').append('<meta name="description" content="' + mainDescription + seo.description[templateName] + '">');
+                    }
+                    // keywords
+                    if (typeof seo.keywords[templateName] !== 'undefined') {
+                        $('meta[name=keywords]').remove();
+                        $('head').append('<meta name="keywords" content="' + seo.keywords[templateName] + '">');
+                    }
 
-                                                            var name = templateName + '-head';
-                                                            console.log('Render view header: ' + name);
+                    var name = templateName + '-head';
+                    console.log('Render view header: ' + name);
 
-                                                            // if the header content was allready loaded from the server
-                                                            if (typeof templates[name] !== 'undefined') {
-                                                                var template = _.template(templates[name]);
-                                                                this.$el.html(template);
-                                                                return true;
-                                                            }
+                    // if the header content was allready loaded from the server
+                    if (typeof templates[name] !== 'undefined') {
+                        var template = _.template(templates[name]);
+                        this.$el.html(template);
+                        return true;
+                    }
 
-                                                            // load the header content from the server
-                                                            // and save it on local client
-                                                            var that = this;
-                                                            $.get('templates/' + name + '.html', function(data) {
-                                                                templates[name] = data;
-                                                                var template = _.template(data);
-                                                                that.$el.html(template);
-                                                            });
-                                                        }
-                                                    });
+                    // load the header content from the server
+                    // and save it on local client
+                    var that = this;
+                    $.get('templates/' + name + '.html', function(data) {
+                        templates[name] = data;
+                        var template = _.template(data);
+                        that.$el.html(template);
+                    });
+                }
+            });
 
-                                                    /**
-                                                     * Define the Routes
-                                                     */
-                                                    var setRouteAction = function(templateType, templateName) {
-                                                        console.log('set route action for: ' + templateName);
-                                                        
-                                                        var pageContent = new PageContent();
-                                                        pageContent.render(templateType, templateName);
+            /**
+             * Define the Routes
+             */
+            var setRouteAction = function(templateType, templateName) {
+                console.log('set route action for: ' + templateName);
 
-                                                        var pageHeader = new PageHeader();
-                                                        pageHeader.render(templateType, templateName);
-                                                    };
+                var pageContent = new PageContent();
+                pageContent.render(templateType, templateName);
 
-                                                    var Router = Backbone.Router.extend({
-                                                        routes: {
-                                                            '': function() {
-                                                                setRouteAction('home', 'home');
-                                                            },
-                                                            'home': function() {
-                                                                setRouteAction('home', 'home');
-                                                            },
-                                                            'servicii-branding': function() {
-                                                                setRouteAction('servicii', 'servicii-branding');
-                                                            },
-                                                            'servicii-creatie-grafica': function() {
-                                                                setRouteAction('servicii', 'servicii-creatie-grafica');
-                                                            },
-                                                            'servicii-dezvoltare-web': function() {
-                                                                setRouteAction('servicii', 'servicii-dezvoltare-web');
-                                                            },
-                                                            'servicii-dezvoltare-web/:package': function(package) {
-                                                                setRouteAction('servicii', 'servicii-dezvoltare-web-' + package);
-                                                            },
-                                                            'servicii-manipulare-foto': function() {
-                                                                setRouteAction('servicii', 'servicii-manipulare-foto');
-                                                            },
-                                                            'servicii-print': function() {
-                                                                setRouteAction('servicii', 'servicii-print');
-                                                            },
-                                                            'portofoliu-dezvoltare-web': function() {
-                                                                setRouteAction('portofoliu', 'portofoliu-dezvoltare-web');
-                                                            },
-                                                            'portofoliu-dezvoltare-web/:project': function(project) {
-                                                                setRouteAction('portofoliu', 'portofoliu-dezvoltare-web-' + project);
-                                                            },
-                                                            'portofoliu-concept-logo': function() {
-                                                                setRouteAction('portofoliu', 'portofoliu-concept-logo');
-                                                            },
-                                                            'portofoliu-concept-logo/:project': function(project) {
-                                                                setRouteAction('portofoliu', 'portofoliu-concept-logo-' + project);
-                                                            }
-                                                        }
-                                                    });
+                var pageHeader = new PageHeader();
+                pageHeader.render(templateType, templateName);
+            };
 
-                                                    /**
-                                                     * ====================================
-                                                     * Finished the app playground
-                                                     * ====================================
-                                                     */
+            var Router = Backbone.Router.extend({
+                routes: {
+                    '': function() {
+                        setRouteAction('home', 'home');
+                    },
+                    'home': function() {
+                        setRouteAction('home', 'home');
+                    },
+                    'servicii-branding': function() {
+                        setRouteAction('servicii', 'servicii-branding');
+                    },
+                    'servicii-creatie-grafica': function() {
+                        setRouteAction('servicii', 'servicii-creatie-grafica');
+                    },
+                    'servicii-dezvoltare-web': function() {
+                        setRouteAction('servicii', 'servicii-dezvoltare-web');
+                    },
+                    'servicii-dezvoltare-web/:package': function(package) {
+                        setRouteAction('servicii', 'servicii-dezvoltare-web-' + package);
+                    },
+                    'servicii-manipulare-foto': function() {
+                        setRouteAction('servicii', 'servicii-manipulare-foto');
+                    },
+                    'servicii-print': function() {
+                        setRouteAction('servicii', 'servicii-print');
+                    },
+                    'portofoliu-dezvoltare-web': function() {
+                        setRouteAction('portofoliu', 'portofoliu-dezvoltare-web');
+                    },
+                    'portofoliu-dezvoltare-web/:project': function(project) {
+                        setRouteAction('portofoliu', 'portofoliu-dezvoltare-web-' + project);
+                    },
+                    'portofoliu-concept-logo': function() {
+                        setRouteAction('portofoliu', 'portofoliu-concept-logo');
+                    },
+                    'portofoliu-concept-logo/:project': function(project) {
+                        setRouteAction('portofoliu', 'portofoliu-concept-logo-' + project);
+                    }
+                }
+            });
 
-                                                    $(document).ready(function() {
-                                                        $('div.to-hide').hide();
-                                                        displayFooter();
+            /**
+             * ====================================
+             * Finished the app playground
+             * ====================================
+             */
 
-                                                        $('#parallax .parallax-layer')
-                                                                .parallax({
-                                                            mouseport: 'body',
-                                                            xparallax: true, // boolean | 0-1 | 'npx' | 'n%' - Sets axis of reaction and by how much they react
-                                                            yparallax: true, //
-                                                            xorigin: 0.5, // 0-1 - Sets default alignment. Only has effect when parallax values are something other than 1 (or true, or '100%')
-                                                            yorigin: 0.5, //
-                                                            decay: 0.66, // 0-1 (0 instant, 1 forever) - Sets rate of decay curve for catching up with target mouse position
-                                                            frameDuration: 30, // Int (milliseconds)
-                                                            freezeClass: 'freeze' // String - Class added to layer when frozen
-                                                        });
+            $(document).ready(function() {
+                $('div.to-hide').hide();
+                displayFooter();
 
-                                                        $('#scrollbox3').enscroll({
-                                                            showOnHover: true,
-                                                            verticalTrackClass: 'track3',
-                                                            verticalHandleClass: 'handle3'
-                                                        });
+                $('#parallax .parallax-layer')
+                        .parallax({
+                    mouseport: 'body',
+                    xparallax: true, // boolean | 0-1 | 'npx' | 'n%' - Sets axis of reaction and by how much they react
+                    yparallax: true, //
+                    xorigin: 0.5, // 0-1 - Sets default alignment. Only has effect when parallax values are something other than 1 (or true, or '100%')
+                    yorigin: 0.5, //
+                    decay: 0.66, // 0-1 (0 instant, 1 forever) - Sets rate of decay curve for catching up with target mouse position
+                    frameDuration: 30, // Int (milliseconds)
+                    freezeClass: 'freeze' // String - Class added to layer when frozen
+                });
 
-                                                        var appRouter = new Router();
+                $('#scrollbox3').enscroll({
+                    showOnHover: true,
+                    verticalTrackClass: 'track3',
+                    verticalHandleClass: 'handle3'
+                });
 
-                                                        Backbone.history.start();
-                                                    });
+                var appRouter = new Router();
+
+                Backbone.history.start();
+            });
                                                 </script>
                                                 </body>
                                                 </html>
