@@ -1,38 +1,5 @@
 <?php
 
-function crawlerDetect($USER_AGENT) {
-    $crawlers = array(
-        array('Google', 'Google'),
-        array('msnbot', 'MSN'),
-        array('Rambler', 'Rambler'),
-        array('Yahoo', 'Yahoo'),
-        array('AbachoBOT', 'AbachoBOT'),
-        array('accoona', 'Accoona'),
-        array('AcoiRobot', 'AcoiRobot'),
-        array('ASPSeek', 'ASPSeek'),
-        array('CrocCrawler', 'CrocCrawler'),
-        array('Dumbot', 'Dumbot'),
-        array('FAST-WebCrawler', 'FAST-WebCrawler'),
-        array('GeonaBot', 'GeonaBot'),
-        array('Gigabot', 'Gigabot'),
-        array('Lycos', 'Lycos spider'),
-        array('MSRBOT', 'MSRBOT'),
-        array('Scooter', 'Altavista robot'),
-        array('AltaVista', 'Altavista robot'),
-        array('IDBot', 'ID-Search Bot'),
-        array('eStyle', 'eStyle Bot'),
-        array('Scrubby', 'Scrubby robot')
-    );
-
-    foreach ($crawlers as $c) {
-        if (stristr($USER_AGENT, $c[0])) {
-            return(true);
-        }
-    }
-
-    return false;
-}
-
 $mainTitle = 'Leviatan Web - We do IT all';
 $mainDescription = 'Leviatan Web - We do IT all';
 $seo = array(
@@ -164,51 +131,19 @@ $seo = array(
     )
 );
 
-$crawler = crawlerDetect($_SERVER['HTTP_USER_AGENT']);
+$html = '';
+$html .= file_get_contents('templates/_main_1_0.html');
 
-if (!$crawler) {
-    $html = '';
-    $html .= file_get_contents('templates/_main_1_0.html');
+$html .= "<title>{$mainTitle}</title>";
+$html .= '<meta name="description" content="' . $mainDescription . '" />';
+$html .= '<meta name="keywords" content="leviatan, web, it" />';
 
-    $html .= "<title>{$mainTitle}</title>";
-    $html .= '<meta name="description" content="' . $mainDescription . '" />';
-    $html .= '<meta name="keywords" content="leviatan, web, it" />';
+$html .= file_get_contents('templates/_main_2_0.html');
+$html .= file_get_contents('templates/_main_2_2.html');
+$html .= file_get_contents('templates/_main_4.html');
+$html .= '<div id="head_scrollbar"></div><div id="scrollbox3"></div>';
+$html .= file_get_contents('templates/_main_5.html');
+$html .= file_get_contents('templates/_main_7.html');
 
-    $html .= '<script>';
-    $html .= "var mainTitle = '{$mainTitle}';";
-    $html .= "var mainDescription = '{$mainDescription}';";
-    $html .= 'var seo = ' . json_encode($seo);
-    $html .= '</script>';
-
-    $html .= file_get_contents('templates/_main_1_1.html');
-
-    $html .= file_get_contents('templates/_main_2.html');
-    $html .= file_get_contents('templates/_main_2_0.html');
-    $html .= file_get_contents('templates/_main_2_1.html');
-    $html .= file_get_contents('templates/_main_2_2.html');
-    $html .= file_get_contents('templates/_main_3.html');
-    $html .= file_get_contents('templates/_main_4.html');
-    $html .= '<div id="head_scrollbar"></div><div id="scrollbox3"></div>';
-    $html .= file_get_contents('templates/_main_5.html');
-    $html .= file_get_contents('templates/_main_6.html');
-    $html .= file_get_contents('templates/_main_7.html');
-
-    echo $html;
-} else {
-    $html = '';
-    $html .= file_get_contents('templates/_main_1_0.html');
-
-    $html .= "<title>{$mainTitle}</title>";
-    $html .= '<meta name="description" content="' . $mainDescription . '" />';
-    $html .= '<meta name="keywords" content="leviatan, web, it" />';
-
-    $html .= file_get_contents('templates/_main_2_0.html');
-    $html .= file_get_contents('templates/_main_2_2.html');
-    $html .= file_get_contents('templates/_main_4.html');
-    $html .= '<div id="head_scrollbar"></div><div id="scrollbox3"></div>';
-    $html .= file_get_contents('templates/_main_5.html');
-    $html .= file_get_contents('templates/_main_7.html');
-
-    echo $html;
-}
+echo $html;
 ?>
