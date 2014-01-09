@@ -140,9 +140,8 @@ $html .= '<meta name="keywords" content="leviatan, web, it" />';
 
 $html .= file_get_contents('templates/_main_2_0.html');
 $html .= file_get_contents('templates/_main_2_2.html');
-$html .= file_get_contents('templates/_main_4.html');
 $html .= '<div id="head_scrollbar"></div><div id="scrollbox3"></div>';
-$html .= file_get_contents('templates/_main_5.html');
+$html .= file_get_contents('templates/_main_5_1.html');
 $html .= file_get_contents('templates/_main_7.html');
 
 echo $html;
