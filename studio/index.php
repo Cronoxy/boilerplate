@@ -33,6 +33,8 @@ function crawlerDetect($USER_AGENT) {
     return false;
 }
 
+$mainTitle = 'Leviatan Web - We do IT all';
+$mainDescription = 'Leviatan Web - We do IT all';
 $seo = array(
     'title' => array(
         'home' => '',
@@ -166,9 +168,22 @@ $crawler = crawlerDetect($_SERVER['HTTP_USER_AGENT']);
 
 if (!$crawler) {
     $html = '';
-    $html .= file_get_contents('templates/_main_1.html');
+    $html .= file_get_contents('templates/_main_1_0.html');
+
+    $html .= "<title>{$mainTitle}</title>";
+    $html .= '<meta name="description" content="' . $mainDescription . '" />';
+    $html .= '<meta name="keywords" content="leviatan, web, it" />';
+
+    $html .= '<script>';
+    $html .= "var mainTitle = '{$mainTitle}';";
+    $html .= "var mainDescription = '{$mainDescription}';";
     $html .= 'var seo = ' . json_encode($seo);
+    $html .= '</script>';
+
+    $html .= file_get_contents('templates/_main_1_1.html');
+
     $html .= file_get_contents('templates/_main_2.html');
+    $html .= file_get_contents('templates/_main_2_0.html');
     $html .= file_get_contents('templates/_main_2_1.html');
     $html .= file_get_contents('templates/_main_2_2.html');
     $html .= file_get_contents('templates/_main_3.html');
@@ -177,9 +192,35 @@ if (!$crawler) {
     $html .= file_get_contents('templates/_main_5.html');
     $html .= file_get_contents('templates/_main_6.html');
     $html .= file_get_contents('templates/_main_7.html');
-    
+
     echo $html;
 } else {
-    
+    $html = '';
+    $html .= file_get_contents('templates/_main_1_0.html');
+
+    $html .= "<title>{$mainTitle}</title>";
+    $html .= '<meta name="description" content="' . $mainDescription . '" />';
+    $html .= '<meta name="keywords" content="leviatan, web, it" />';
+
+    $html .= '<script>';
+    $html .= "var mainTitle = '{$mainTitle}';";
+    $html .= "var mainDescription = '{$mainDescription}';";
+    $html .= 'var seo = ' . json_encode($seo);
+    $html .= '</script>';
+
+    $html .= file_get_contents('templates/_main_1_1.html');
+
+    $html .= file_get_contents('templates/_main_2.html');
+    $html .= file_get_contents('templates/_main_2_0.html');
+    $html .= file_get_contents('templates/_main_2_1.html');
+    $html .= file_get_contents('templates/_main_2_2.html');
+    $html .= file_get_contents('templates/_main_3.html');
+    $html .= file_get_contents('templates/_main_4.html');
+    $html .= '<div id="head_scrollbar"></div><div id="scrollbox3"></div>';
+    $html .= file_get_contents('templates/_main_5.html');
+    $html .= file_get_contents('templates/_main_6.html');
+    $html .= file_get_contents('templates/_main_7.html');
+
+    echo $html;
 }
 ?>
