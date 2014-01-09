@@ -175,6 +175,8 @@ if (!$crawler) {
     $html .= file_get_contents('templates/_main_5.html');
     $html .= file_get_contents('templates/_main_6.html');
     $html .= file_get_contents('templates/_main_7.html');
+    
+    echo $html;
 } else {
     
 }
