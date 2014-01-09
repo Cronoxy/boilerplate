@@ -169,6 +169,8 @@ if (!$crawler) {
     $html .= file_get_contents('templates/_main_1.html');
     $html .= 'var seo = ' . json_encode($seo);
     $html .= file_get_contents('templates/_main_2.html');
+    $html .= file_get_contents('templates/_main_2_1.html');
+    $html .= file_get_contents('templates/_main_2_2.html');
     $html .= file_get_contents('templates/_main_3.html');
     $html .= file_get_contents('templates/_main_4.html');
     $html .= '<div id="head_scrollbar"></div><div id="scrollbox3"></div>';
