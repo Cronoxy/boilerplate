@@ -141,7 +141,7 @@ $html .= '<meta name="keywords" content="leviatan, web, it" />';
 $html .= file_get_contents('templates/_main_2_0.html');
 $html .= file_get_contents('templates/_main_2_2.html');
 $html .= '<div id="head_scrollbar"></div>';
-$html .= '<div id="scrollbox3">' . $_SERVER['QUERY_STRING'] . '</div>';
+$html .= '<div id="scrollbox3">' . $_SERVER['REQUEST_URI'] . '</div>';
 $html .= file_get_contents('templates/_main_5_1.html');
 $html .= file_get_contents('templates/_main_7.html');
 
