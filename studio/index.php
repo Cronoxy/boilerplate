@@ -38,6 +38,6 @@ function crawlerDetect($USER_AGENT) {
 $crawler = crawlerDetect($_SERVER['HTTP_USER_AGENT']);
 
 if (!$crawler) {
-    echo file_get_contents('index.html');
+    echo file_get_contents('main.html');
 }
 ?>
