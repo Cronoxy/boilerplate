@@ -116,11 +116,11 @@ div {
 #head_scrollbar {
     width: 715px;
     height: 115px;
-    padding: 0 5px;
+    padding: 0 10px;
     background-color: white;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=92)";
-    filter: alpha(opacity = 92);
-    opacity: 0.92;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=88)";
+    filter: alpha(opacity = 88);
+    opacity: 0.88;
     font-family: "Comic Sans MS", cursive, sans-serif !important;
 }
 
@@ -143,7 +143,7 @@ div {
 #scrollbox3 {
     overflow: auto;
     width: 715px;
-    height: 525px;
+    height: 450px;
     padding: 0 5px;
     background-color: white;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=92)";

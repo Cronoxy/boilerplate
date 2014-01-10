@@ -231,13 +231,13 @@ body {
 }
 
 a {
-  color: #0088cc;
+  color: #005580;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #005580;
+  color: #0088cc;
   text-decoration: underline;
 }
 
@@ -764,7 +764,12 @@ h3 {
 }
 
 h1 {
-  font-size: 38.5px;
+  font-size: 30px;
+  text-align: right;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-weight: normal;
+  padding-right: 70px;
+  color: gray;
 }
 
 h2 {
